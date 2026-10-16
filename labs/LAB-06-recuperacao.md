@@ -52,4 +52,5 @@ cp .claude/settings.exemplo.json .claude/settings.json
 
 Com isso, toda vez que o agente for encerrar uma resposta, o SddCheck roda. Se falhar,
 ele é obrigado a continuar e corrigir. Repita a sabotagem 2 do Lab 04 e veja o agente
-ser bloqueado. (O Copilot CLI também suporta hooks; veja a documentação da sua versão.)
+ser bloqueado. Se o agente não conseguir corrigir e ficar insistindo, apague o `.claude/settings.json`.
+(O Copilot CLI também suporta hooks; veja a documentação da sua versão.)

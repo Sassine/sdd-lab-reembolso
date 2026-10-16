@@ -19,7 +19,8 @@ formatos que as duas ferramentas leem; o que muda é só o atalho de cada uma.
 - Git
 - Claude Code **ou** GitHub Copilot CLI, autenticado
 - Maven não é necessário: o projeto traz o Maven Wrapper (`./mvnw` / `mvnw.cmd`),
-  que baixa o Maven na primeira execução.
+  que baixa o Maven na primeira execução (precisa de acesso ao Maven Central).
+- No Windows, use `mvnw.cmd` e `.\scripts\verify.ps1`; o resto dos comandos é igual.
 
 ```bash
 git clone <url-deste-repo> sdd-lab && cd sdd-lab
