@@ -1,0 +1,15 @@
+{
+  "//": "Opcional (lab 06). Copie para .claude/settings.json para que o Claude Code rode o SddCheck sempre que for encerrar uma resposta. Saída 2 bloqueia o encerramento e devolve o erro ao agente.",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "java scripts/SddCheck.java > /dev/null 2>&1 || { java scripts/SddCheck.java 1>&2; exit 2; }"
+          }
+        ]
+      }
+    ]
+  }
+}

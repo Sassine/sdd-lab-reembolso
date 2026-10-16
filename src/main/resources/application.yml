@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: reembolso
+  datasource:
+    url: jdbc:h2:mem:reembolso;DB_CLOSE_DELAY=-1
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
