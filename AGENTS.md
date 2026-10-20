@@ -14,11 +14,11 @@ Regras de negócio: `docs/politica-de-despesas.md`. Regras de engenharia: `sdd/c
 |---|---|---|
 | Testes | `./mvnw -q test` | `mvnw.cmd -q test` |
 | Um teste | `./mvnw -q test -Dtest=NomeDoTeste` | `mvnw.cmd -q test -Dtest=NomeDoTeste` |
-| Portão completo | `./scripts/verify.sh` | `.\scripts\verify.ps1` |
+| Gate completo | `./scripts/verify.sh` | `.\scripts\verify.ps1` |
 | Checar artefatos SDD | `java scripts/SddCheck.java` | `java scripts\SddCheck.java` |
 | Próxima tarefa | `java scripts/SddCheck.java --proxima specs/<pasta>` | idem |
 
-O portão completo roda os testes **e** o SddCheck. Uma tarefa só termina com ele verde.
+O gate completo roda os testes **e** o SddCheck. Uma tarefa só termina com ele verde.
 
 ## Onde fica cada coisa
 
@@ -32,7 +32,7 @@ O portão completo roda os testes **e** o SddCheck. Uma tarefa só termina com e
 
 ## Regras de trabalho
 
-1. **Uma tarefa por sessão.** Termine, rode o portão, faça commit, registre no progress.md.
+1. **Uma tarefa por sessão.** Termine, rode o gate, faça commit, registre no progress.md.
 2. Em `tasks.md`, mude só o checkbox `[ ]` → `[x]`. Não reescreva nem reordene tarefas.
 3. `progress.md` é append-only: nunca apague entradas anteriores.
 4. Não apague nem enfraqueça testes para passar. Se algo parecer errado, pare e registre.
@@ -43,4 +43,4 @@ O portão completo roda os testes **e** o SddCheck. Uma tarefa só termina com e
 ## Retomando uma sessão
 
 Leia nesta ordem: `git log --oneline -10` → `progress.md` da spec ativa →
-`java scripts/SddCheck.java --proxima specs/<pasta>` → rode o portão antes de mexer.
+`java scripts/SddCheck.java --proxima specs/<pasta>` → rode o gate antes de mexer.

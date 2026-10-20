@@ -1,21 +1,34 @@
 # TICKET-002 · Adequar o reembolso à Política de Despesas v3
 
-**Aberto por:** Marina (PO Finanças) · **Prioridade:** alta · **Prazo:** entra em vigor em 01/11
+**Tipo:** história · **Aberto por:** Marina (PO Finanças) · **Prioridade:** alta ·
+**Prazo:** a política entra em vigor em 01/11
 
-Oi, time! A política nova (v3) sai dia 01/11 e o sistema precisa estar adequado.
-O documento está em `docs/politica-de-despesas.md`.
+> Descrição revisada pelo agente de PM do time a partir do pedido original da Marina.
 
-O que muda pra gente, resumindo:
+## Contexto
 
-- teto de refeição por dia
-- aprovação em dois níveis (gestor e financeiro) dependendo do valor
-- acima de 5 mil não pode mais entrar como reembolso
-- ninguém aprova o próprio pedido
+A Política de Despesas v3 entra em vigor em 01/11. O documento está em
+`docs/politica-de-despesas.md`. A auditoria do último trimestre apontou que hoje qualquer
+pessoa aprova qualquer pedido, inclusive o próprio.
 
-Hoje qualquer pessoa aprova qualquer coisa, inclusive o próprio pedido — a auditoria
-apontou isso no último trimestre.
+## História
 
-Ah, e um detalhe: semana passada dois gestores aprovaram o mesmo pedido quase ao mesmo
-tempo e o histórico ficou com o nome errado. Não sei se tem a ver, mas fica o registro.
+Como analista do Financeiro, quero que o sistema de reembolso aplique a política v3,
+para que pedidos fora da política não sejam aprovados.
 
-Qualquer dúvida, me chamem.
+## Critérios de aceite
+
+- [ ] Refeições respeitam o teto diário da política.
+- [ ] Pedidos de valor mais alto passam pelo gestor e depois pelo Financeiro.
+- [ ] Pedidos acima de R$ 5.000 não entram mais como reembolso.
+- [ ] Ninguém aprova o próprio pedido.
+- [ ] O histórico registra quem aprovou cada etapa.
+
+## Fora de escopo
+
+- Integração com o sistema de pagamentos.
+
+## Observações
+
+Semana passada dois gestores aprovaram o mesmo pedido quase ao mesmo tempo e o histórico
+ficou com o nome errado. Não sei se tem a ver, mas fica o registro.

@@ -22,7 +22,7 @@ O ticket do defeito (ex.: `tickets/TICKET-003-prazo-60-dias.md`).
 5. Investigue a causa e registre `Classe#metodo` e o porquê. Mostre ao humano antes de corrigir.
 6. Escreva primeiro o teste que **falha hoje** pelo motivo certo. Rode e mostre a falha.
 7. Corrija com a menor mudança possível.
-8. Rode o teste novo, os testes existentes da área e o portão completo.
+8. Rode o teste novo, os testes existentes da área e o gate completo.
 9. Registre no `progress.md` da pasta e faça commit `fix: ...` com `Spec: specs/NNN-nome`.
 
 ## Regras
@@ -32,4 +32,4 @@ O ticket do defeito (ex.: `tickets/TICKET-003-prazo-60-dias.md`).
 
 ## Saída
 
-Causa em uma linha, diff resumido, testes adicionados e resultado do portão.
+Causa em uma linha, diff resumido, testes adicionados e resultado do gate.

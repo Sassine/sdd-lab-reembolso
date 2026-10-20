@@ -1,6 +1,6 @@
 ---
 name: sdd-implement
-description: Orquestra a implementação de uma spec tarefa por tarefa a partir de tasks.md, delegando cada tarefa ao agente implementador, validando com o agente revisor e com o portão de testes, marcando o checkbox, registrando o progress.md e fazendo commit. Use quando tasks.md estiver aprovado e alguém pedir para implementar, executar as tarefas ou continuar a implementação.
+description: Orquestra a implementação de uma spec tarefa por tarefa a partir de tasks.md, delegando cada tarefa ao agente implementador, validando com o agente revisor e com o gate de testes, marcando o checkbox, registrando o progress.md e fazendo commit. Use quando tasks.md estiver aprovado e alguém pedir para implementar, executar as tarefas ou continuar a implementação.
 ---
 
 # Implementar como orquestrador
@@ -16,7 +16,7 @@ A pasta da spec. Opcional: quantas tarefas fazer nesta sessão (padrão: 1).
 ## Ritual de início
 
 1. `git status` deve estar limpo. Se não estiver, pare e pergunte.
-2. Rode o portão (`./scripts/verify.sh` ou `.\scripts\verify.ps1`). Se já estiver
+2. Rode o gate (`./scripts/verify.sh` ou `.\scripts\verify.ps1`). Se já estiver
    vermelho antes de começar, pare: não construa em cima de base quebrada.
 3. `java scripts/SddCheck.java --proxima specs/NNN-nome` para saber a próxima tarefa.
 
@@ -28,7 +28,7 @@ A pasta da spec. Opcional: quantas tarefas fazer nesta sessão (padrão: 1).
    "não toque em outros arquivos; não apague testes".
 2. **Despache** para o agente `implementador`. Se a ferramenta não tiver sub-agentes,
    execute você mesmo, limitado ao briefing.
-3. **Verifique** você mesmo: rode a linha `Verificação:` da tarefa e depois o portão completo.
+3. **Verifique** você mesmo: rode a linha `Verificação:` da tarefa e depois o gate completo.
 4. **Revise:** despache o agente `revisor` passando só o `git diff` e os requisitos da
    tarefa. Ele não vê a conversa do implementador, e é isso que o torna útil.
 5. Se o revisor apontar problema bloqueante, devolva ao implementador **uma vez** com
@@ -52,4 +52,4 @@ Leitura e revisão podem ser paralelas; escrita, em regra, não.
 
 ## Saída
 
-Tarefas concluídas nesta sessão, hash dos commits, estado do portão e a próxima tarefa.
+Tarefas concluídas nesta sessão, hash dos commits, estado do gate e a próxima tarefa.

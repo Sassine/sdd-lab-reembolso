@@ -4,7 +4,7 @@
 
 A ideia: em vez de uma sessão longa que enche a janela, rodar o mesmo prompt várias
 vezes, cada vez numa sessão nova, até não sobrar tarefa. Cada volta lê o estado do disco,
-faz **uma** tarefa, roda o portão e faz commit.
+faz **uma** tarefa, roda o gate e faz commit.
 
 ## O script
 
@@ -14,7 +14,7 @@ faz **uma** tarefa, roda o portão e faz commit.
 ./scripts/loop.sh specs/002-<nome> 5     # no máximo 5 voltas
 ```
 
-Ele para quando: não há tarefa pendente, o portão fica vermelho, ou o limite de voltas
+Ele para quando: não há tarefa pendente, o gate fica vermelho, ou o limite de voltas
 acaba. Rode **sempre numa branch**, nunca na main.
 
 ## Antes de usar

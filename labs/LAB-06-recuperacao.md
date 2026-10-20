@@ -29,7 +29,7 @@ Ele precisa chegar à mesma próxima tarefa só olhando git, tasks e progress.
 1. Implemente a próxima tarefa normalmente, até o commit.
 2. Agora estrague: apague uma linha importante da classe criada e faça commit
    "T00N: ajuste".
-3. Limpe a sessão e rode `/sdd-retomar`. O portão deve ficar vermelho.
+3. Limpe a sessão e rode `/sdd-retomar`. O gate deve ficar vermelho.
 4. Recupere:
 
 ```bash
@@ -44,7 +44,7 @@ git revert --no-edit HEAD
 **Git é a verdade do código. tasks.md é a verdade do status. progress.md é a verdade
 da narrativa.** Quando discordam, quem resolve é você.
 
-## 4. Portão automático (Claude Code)
+## 4. Gate automático (Claude Code)
 
 ```bash
 cp .claude/settings.exemplo.json .claude/settings.json

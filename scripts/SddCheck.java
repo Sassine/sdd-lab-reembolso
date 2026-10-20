@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 /**
- * Portão determinístico dos artefatos de SDD. Não depende de IA: lê os
+ * Gate determinístico dos artefatos de SDD. Não depende de IA: lê os
  * arquivos em specs/ e reprova o que estiver fora do contrato.
  *
  * Uso (Java 21, sem compilar):

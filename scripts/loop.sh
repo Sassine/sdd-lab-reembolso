@@ -27,7 +27,7 @@ for volta in $(seq 1 "$MAX"); do
     --allowedTools "Read,Edit,Write,Glob,Grep,Task,Bash(git:*),Bash(./mvnw:*),Bash(java scripts/SddCheck.java:*),Bash(./scripts/verify.sh)"
 
   if ! ./scripts/verify.sh > /dev/null 2>&1; then
-    echo "Portão vermelho depois da volta $volta. Parando para revisão humana."; exit 2
+    echo "Gate vermelho depois da volta $volta. Parando para revisão humana."; exit 2
   fi
   if grep -q "bloqueada" "$SPEC/progress.md" 2>/dev/null && [ "$(java scripts/SddCheck.java --proxima "$SPEC" | head -1)" = "$proxima" ]; then
     echo "Tarefa $proxima ficou bloqueada. Parando para revisão humana."; exit 3

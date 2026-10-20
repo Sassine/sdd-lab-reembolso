@@ -10,7 +10,7 @@
 
 Acompanhe o que o orquestrador faz:
 
-1. confere `git status` e roda o portão **antes** de começar;
+1. confere `git status` e roda o gate **antes** de começar;
 2. pega a próxima tarefa com `SddCheck --proxima`;
 3. monta um briefing autocontido e despacha o `implementador`;
 4. roda a verificação ele mesmo (não confia no "terminei");

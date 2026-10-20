@@ -16,7 +16,7 @@ Tudo que importa está em disco. Siga o ritual na ordem, sem pular.
 3. Descubra a spec ativa: a pasta citada no último commit (`Spec:`), ou a mais recente em `specs/`.
 4. Leia **a última entrada** do `progress.md` dessa spec (não o arquivo inteiro, se for longo).
 5. `java scripts/SddCheck.java --proxima specs/NNN-nome`.
-6. Rode o portão. Ele precisa estar verde antes de qualquer trabalho novo.
+6. Rode o gate. Ele precisa estar verde antes de qualquer trabalho novo.
 
 ## Conferência de consistência
 
@@ -34,4 +34,4 @@ conserte por conta própria**: mostre a divergência ao humano e proponha a corr
 ## Saída
 
 Em até 8 linhas: spec ativa, tarefas feitas/total, última decisão relevante,
-estado do portão e a próxima tarefa. Depois pergunte se segue com `/sdd-implement`.
+estado do gate e a próxima tarefa. Depois pergunte se segue com `/sdd-implement`.

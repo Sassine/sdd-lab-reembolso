@@ -9,7 +9,7 @@
 java scripts/SddCheck.java specs/002-<nome>
 ```
 
-## 2. Quebrar o portão de propósito
+## 2. Quebrar o gate de propósito
 
 Edite `tasks.md` e faça cada uma destas coisas, uma por vez, rodando o SddCheck depois:
 
@@ -21,7 +21,7 @@ Edite `tasks.md` e faça cada uma destas coisas, uma por vez, rodando o SddCheck
 
 Desfaça com `git checkout -- specs/`.
 
-O SddCheck não usa IA. É um portão determinístico: sempre dá a mesma resposta para o
+O SddCheck não usa IA. É um gate determinístico: sempre dá a mesma resposta para o
 mesmo arquivo, e não se convence com argumento.
 
 ## 3. Tamanho

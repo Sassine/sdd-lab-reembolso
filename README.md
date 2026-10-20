@@ -25,7 +25,7 @@ formatos que as duas ferramentas leem; o que muda é só o atalho de cada uma.
 ```bash
 git clone <url-deste-repo> sdd-lab && cd sdd-lab
 ./mvnw -q test                 # Windows: mvnw.cmd -q test
-java scripts/SddCheck.java     # portão dos artefatos SDD
+java scripts/SddCheck.java     # gate dos artefatos SDD
 ```
 
 ## O fluxo
@@ -60,7 +60,7 @@ specs/001-.../             exemplo completo de spec já implementada
 tickets/                   pedidos de negócio para os exercícios
 docs/                      política de negócio (fonte da verdade do domínio)
 labs/                      exercícios guiados
-scripts/                   portão (verify), checagem de artefatos (SddCheck)
+scripts/                   gate (verify), checagem de artefatos (SddCheck)
 ```
 
 ## Atalhos por ferramenta
@@ -88,7 +88,7 @@ scripts/                   portão (verify), checagem de artefatos (SddCheck)
 | 01 | [Contexto](labs/LAB-01-contexto.md) | 20 min | medir a janela, o diff do AGENTS.md |
 | 02 | [Especificar e esclarecer](labs/LAB-02-specify-clarify.md) | 30 min | spec com requisitos e critérios, morte silenciosa |
 | 03 | [Planejar](labs/LAB-03-plan.md) | 25 min | research por sub-agente, spec × plano |
-| 04 | [Quebrar em tarefas](labs/LAB-04-tasks.md) | 20 min | tarefa do tamanho certo, `[P]`, portão |
+| 04 | [Quebrar em tarefas](labs/LAB-04-tasks.md) | 20 min | tarefa do tamanho certo, `[P]`, gate |
 | 05 | [Implementar como orquestrador](labs/LAB-05-implement.md) | 40 min | uma tarefa por sessão, implementador e revisor |
 | 06 | [Cair e voltar](labs/LAB-06-recuperacao.md) | 20 min | snapshot, clear, retomar, reverter |
 | 07 | [Bugfix com spec mínima](labs/LAB-07-bugfix.md) | 20 min | atual / esperado / não pode mudar |
