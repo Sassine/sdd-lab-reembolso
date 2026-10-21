@@ -17,3 +17,12 @@
 - **Arquivos tocados:** `dominio/Reembolso.java`, `api/TratadorDeErros.java`
 - **Verificação:** `./mvnw -q test` → verde (o teste de concorrência em si é a T007)
 - **Próximo passo concreto:** fase 2. T003, T004 e T005 são independentes e podem ir em paralelo.
+
+## 2026-10-21 10:30 · T003 · concluída
+
+- **Objetivo da sessão:** regra de alçada isolada (R1, R2, R3).
+- **O que foi feito:** `PoliticaDeAlcada#exigeFinanceiro` e `#validarSubmissao`; teste parametrizado nos limites exatos.
+- **Decisões e porquê:** limites como `BigDecimal` com escala 2 e comparação por `compareTo` (500.0 e 500.00 são iguais; `equals` diria que não).
+- **Arquivos tocados:** `servico/PoliticaDeAlcada.java`, `servico/PoliticaDeAlcadaTest.java`
+- **Verificação:** `./mvnw -q test -Dtest=PoliticaDeAlcadaTest` → 6 testes verdes
+- **Próximo passo concreto:** T004 (segregação). Rodou em paralelo com T004 e T005 em worktrees separados.

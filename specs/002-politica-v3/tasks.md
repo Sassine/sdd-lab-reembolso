@@ -14,7 +14,7 @@
 
 ## Fase 2 · Políticas
 
-- [ ] T003 [P] [R1,R2,R3] PoliticaDeAlcada com limites de R$ 500,00 e R$ 5.000,00
+- [x] T003 [P] [R1,R2,R3] PoliticaDeAlcada com limites de R$ 500,00 e R$ 5.000,00
       Arquivos: `servico/PoliticaDeAlcada.java`, `servico/PoliticaDeAlcadaTest.java`
       Verificação: `./mvnw -q test -Dtest=PoliticaDeAlcadaTest`
 - [ ] T004 [P] [R5] PoliticaDeSegregacao
