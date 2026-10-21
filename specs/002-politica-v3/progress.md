@@ -111,3 +111,14 @@
 - **Commit:** esta entrada integra `T007: validar teto diario de refeicoes sem dupla contagem`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** registrar T008 e iniciar a integração T009.
+
+## 2026-10-21 18:32 · T008 · concluída
+
+- **Objetivo da sessão:** disponibilizar âncora persistente por colaborador/data para serializar refeições, inclusive em dia vazio.
+- **O que foi feito:** implementador em worktree exclusivo criou chave composta, entidade sem saldo, repositório e ControleDeTetoDiario; 14 testes cobrem H2 real, criação/reuso, corrida, rollback, falhas e duração do lock. Revisão independente APROVADA.
+- **Decisões e porquê:** INSERT explícito evita merge com identificador atribuído; garantia usa REQUIRES_NEW com flush e confirmação posterior em nova transação somente para colisão específica da PK H2. Falhas não relacionadas propagam. Bloqueio PESSIMISTIC_WRITE exige transação externa e dura até seu término; integração deve garantir existência antes de qualquer escrita/lock externo.
+- **Arquivos tocados:** `src\main\java\com\orbe\reembolso\dominio\DiaRefeicao.java`, `src\main\java\com\orbe\reembolso\dominio\ChaveDiaRefeicao.java`, `src\main\java\com\orbe\reembolso\servico\DiaRefeicaoRepository.java`, `src\main\java\com\orbe\reembolso\servico\ControleDeTetoDiario.java`, `src\test\java\com\orbe\reembolso\servico\ControleDeTetoDiarioTest.java`, checkbox de `tasks.md` e este log.
+- **Verificação:** implementador registrou RED e GREEN com 14 testes; gate completo verde no worktree e no lote integrado T006–T008 executado pelo orquestrador; diff sem problemas.
+- **Commit:** esta entrada integra `T008: garantir ancora diaria com transacoes e lock persistente`.
+- **Bloqueios / dúvidas:** nenhum. Reconhecimento da PK é específico do H2 testado; troca de banco exige revisão, fora deste laboratório.
+- **Próximo passo concreto:** T009 — integrar aprovação v3 ao contrato aditivo da API sem reenquadrar decisões v2.

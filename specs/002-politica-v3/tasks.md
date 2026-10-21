@@ -41,7 +41,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeRefeicao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeRefeicaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T008 [P] [R1] Disponibilize a âncora diária com criação transacional independente e bloqueio persistente.
+- [x] T008 [P] [R1] Disponibilize a âncora diária com criação transacional independente e bloqueio persistente.
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\DiaRefeicao.java`, `src\main\java\com\orbe\reembolso\dominio\ChaveDiaRefeicao.java`, `src\main\java\com\orbe\reembolso\servico\DiaRefeicaoRepository.java`, `src\main\java\com\orbe\reembolso\servico\ControleDeTetoDiario.java`, `src\test\java\com\orbe\reembolso\servico\ControleDeTetoDiarioTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
