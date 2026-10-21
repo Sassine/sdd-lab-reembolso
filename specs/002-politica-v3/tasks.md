@@ -51,7 +51,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\api\DecisaoRequest.java`, `src\main\java\com\orbe\reembolso\api\ReembolsoController.java`, `src\main\java\com\orbe\reembolso\api\ReembolsoResponse.java`, `src\main\java\com\orbe\reembolso\api\DecisaoReembolsoResponse.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\test\java\com\orbe\reembolso\suporte\RelogioPoliticaV3DeTeste.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T010 [R5,R6] Comprove as recusas de autorização v3 com preservação da autoria histórica.
+- [x] T010 [R5,R6] Comprove as recusas de autorização v3 com preservação da autoria histórica.
       Arquivos: `src\main\java\com\orbe\reembolso\api\DecisaoRequest.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeAutorizacao.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeAprovacao.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

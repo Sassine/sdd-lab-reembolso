@@ -133,3 +133,14 @@
 - **Commit:** esta entrada integra `T009: integrar aprovacao v3 com contrato aditivo`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T010 — comprovar recusas de autorização v3 preservando autoria histórica.
+
+## 2026-10-21 18:47 · T010 · concluída
+
+- **Objetivo da sessão:** comprovar autorização v3 e autoria histórica pela API.
+- **O que foi feito:** implementador acrescentou 11 testes, incluindo CA8–CA10, CA21 e CA22, declarações contraditórias/ausentes, etapa explícita e preservação integral em consultas posteriores. Revisão independente APROVADA.
+- **Decisões e porquê:** novas provas passaram sobre T009 desde a primeira execução; nenhum RED artificial ou alteração de produção sem defeito.
+- **Arquivos tocados:** `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`, checkbox e este log.
+- **Verificação:** 16 testes API verdes pelo implementador; gate completo verde por ele e pelo orquestrador; diff limpo.
+- **Commit:** esta entrada integra `T010: comprovar autorizacao v3 e autoria historica`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T011 — integrar rejeição v3 com registro exclusivo de decisões aceitas.
