@@ -31,26 +31,30 @@ public class ReembolsoController {
     public ResponseEntity<ReembolsoResponse> submeter(@Valid @RequestBody NovoReembolsoRequest pedido) {
         Reembolso criado = servico.submeter(pedido.paraComando());
         return ResponseEntity.created(URI.create("/reembolsos/" + criado.getId()))
-                .body(ReembolsoResponse.de(criado));
+                .body(resposta(criado));
     }
 
     @GetMapping("/{id}")
     public ReembolsoResponse buscar(@PathVariable Long id) {
-        return ReembolsoResponse.de(servico.buscar(id));
+        return resposta(servico.buscar(id));
     }
 
     @GetMapping
     public List<ReembolsoResponse> listar(@RequestParam String colaborador) {
-        return servico.listarPorColaborador(colaborador).stream().map(ReembolsoResponse::de).toList();
+        return servico.listarPorColaborador(colaborador).stream().map(this::resposta).toList();
     }
 
     @PostMapping("/{id}/aprovacao")
     public ReembolsoResponse aprovar(@PathVariable Long id, @Valid @RequestBody DecisaoRequest decisao) {
-        return ReembolsoResponse.de(servico.aprovar(id, decisao.responsavel().trim()));
+        return resposta(servico.aprovar(id, decisao.paraComando()));
     }
 
     @PostMapping("/{id}/rejeicao")
     public ReembolsoResponse rejeitar(@PathVariable Long id, @Valid @RequestBody DecisaoRequest decisao) {
-        return ReembolsoResponse.de(servico.rejeitar(id, decisao.responsavel().trim(), decisao.motivo()));
+        return resposta(servico.rejeitar(id, decisao.responsavel().trim(), decisao.motivo()));
+    }
+
+    private ReembolsoResponse resposta(Reembolso reembolso) {
+        return ReembolsoResponse.de(reembolso, servico.politicaDe(reembolso));
     }
 }

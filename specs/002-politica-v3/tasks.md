@@ -47,7 +47,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
 
 ## Fase 3 · Integração
 
-- [ ] T009 [R2,R3,R4,R6,R9] Integre a aprovação v3 ao contrato aditivo da API sem reenquadrar decisões v2.
+- [x] T009 [R2,R3,R4,R6,R9] Integre a aprovação v3 ao contrato aditivo da API sem reenquadrar decisões v2.
       Arquivos: `src\main\java\com\orbe\reembolso\api\DecisaoRequest.java`, `src\main\java\com\orbe\reembolso\api\ReembolsoController.java`, `src\main\java\com\orbe\reembolso\api\ReembolsoResponse.java`, `src\main\java\com\orbe\reembolso\api\DecisaoReembolsoResponse.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\test\java\com\orbe\reembolso\suporte\RelogioPoliticaV3DeTeste.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

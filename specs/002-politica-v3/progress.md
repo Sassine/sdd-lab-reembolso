@@ -122,3 +122,14 @@
 - **Commit:** esta entrada integra `T008: garantir ancora diaria com transacoes e lock persistente`.
 - **Bloqueios / dúvidas:** nenhum. Reconhecimento da PK é específico do H2 testado; troca de banco exige revisão, fora deste laboratório.
 - **Próximo passo concreto:** T009 — integrar aprovação v3 ao contrato aditivo da API sem reenquadrar decisões v2.
+
+## 2026-10-21 18:41 · T009 · concluída
+
+- **Objetivo da sessão:** integrar aprovação v3 com contrato aditivo e compatibilidade v2.
+- **O que foi feito:** implementador integrou vigência, prazo e alçada, comando declarado, resposta com política/etapa/histórico e flush atômico. Cinco testes API CA3–CA7 e relógio v3 próprio. Revisão independente APROVADA.
+- **Decisões e porquê:** captura temporal única por comando e reutilização das políticas; campos novos condicionais à v3, sem mudar o relógio v2. Rejeição e teto ficam para T011/T012.
+- **Arquivos tocados:** `DecisaoRequest`, `ReembolsoController`, `ReembolsoResponse`, `DecisaoReembolsoResponse`, `ReembolsoService`, `RelogioPoliticaV3DeTeste`, `ReembolsoPoliticaV3ApiTest`, checkbox e este log, nos caminhos de T009.
+- **Verificação:** implementador registrou RED com cinco falhas e GREEN de API; gate completo executado por ele e pelo orquestrador → GATE VERDE; diff sem problemas.
+- **Commit:** esta entrada integra `T009: integrar aprovacao v3 com contrato aditivo`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T010 — comprovar recusas de autorização v3 preservando autoria histórica.
