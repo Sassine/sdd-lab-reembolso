@@ -23,7 +23,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\main\java\com\orbe\reembolso\dominio\DecisaoReembolso.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoRepository.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoPersistenciaTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T004 [R5,R7] Centralize a autorização declarada por etapa sem autenticação real ou substituição automática.
+- [x] T004 [R5,R7] Centralize a autorização declarada por etapa sem autenticação real ou substituição automática.
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeAutorizacao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeAutorizacaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

@@ -67,3 +67,14 @@
 - **Commit:** esta entrada integra `T003: persistir historico com controle otimista de versao`; consultar o hash com `git log --oneline --grep="^T003:"`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T004 — centralizar a autorização declarada por etapa sem autenticação real ou substituição automática.
+
+## 2026-10-21 18:00 · T004 · concluída
+
+- **Objetivo da sessão:** centralizar a autorização declarada por etapa para aprovação e rejeição v3, sem autenticação real ou substituição automática.
+- **O que foi feito:** implementador criou PoliticaDeAutorizacao e testes de declarações, impedimentos, etapa/estado e preservação do pedido e histórico. O componente valida identidade, papel, vínculo e gestor declarado, impede decisão sobre o próprio pedido e exige pessoa distinta do aprovador histórico do gestor na etapa financeira. Revisão independente APROVADA, sem bloqueantes.
+- **Decisões e porquê:** método comum `validar(Reembolso, DecidirReembolso)` permite reutilização pelas políticas futuras de aprovação e rejeição, sem mutar o agregado ou consultar cadastro/DTO. Correspondência de etapa e estado é validada antes da autorização. Comparações usam trim e são sensíveis a caixa; separação financeira usa autoria histórica, não um novo gestor declarado. Integração, limites monetários e validação de motivo permanecem nas tarefas seguintes.
+- **Arquivos tocados:** `src\main\java\com\orbe\reembolso\servico\PoliticaDeAutorizacao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeAutorizacaoTest.java`, checkbox de `tasks.md` e este log.
+- **Verificação:** implementador registrou RED com 29 falhas comportamentais usando política vazia e GREEN com 35 cenários passando no teste focado. `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1` executado pelo implementador e independentemente pelo orquestrador → GATE VERDE, incluindo testes e SddCheck; `git diff --check` sem problemas.
+- **Commit:** esta entrada integra `T004: centralizar autorizacao declarada por etapa`; consultar o hash com `git log --oneline --grep="^T004:"`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T005 — implementar a política de aprovação por alçada reutilizando a autorização declarada.
