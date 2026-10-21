@@ -17,7 +17,7 @@
 - [x] T003 [P] [R1,R2,R3] PoliticaDeAlcada com limites de R$ 500,00 e R$ 5.000,00
       Arquivos: `servico/PoliticaDeAlcada.java`, `servico/PoliticaDeAlcadaTest.java`
       Verificação: `./mvnw -q test -Dtest=PoliticaDeAlcadaTest`
-- [ ] T004 [P] [R5] PoliticaDeSegregacao
+- [x] T004 [P] [R5] PoliticaDeSegregacao
       Arquivos: `servico/PoliticaDeSegregacao.java`, `servico/PoliticaDeSegregacaoTest.java`
       Verificação: `./mvnw -q test -Dtest=PoliticaDeSegregacaoTest`
 - [ ] T005 [P] [R6] PoliticaTetoRefeicao e soma diária no repositório

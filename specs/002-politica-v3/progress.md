@@ -26,3 +26,12 @@
 - **Arquivos tocados:** `servico/PoliticaDeAlcada.java`, `servico/PoliticaDeAlcadaTest.java`
 - **Verificação:** `./mvnw -q test -Dtest=PoliticaDeAlcadaTest` → 6 testes verdes
 - **Próximo passo concreto:** T004 (segregação). Rodou em paralelo com T004 e T005 em worktrees separados.
+
+## 2026-10-21 10:34 · T004 · concluída
+
+- **Objetivo da sessão:** ninguém aprova o próprio pedido; Financeiro diferente do gestor (R5).
+- **O que foi feito:** `PoliticaDeSegregacao#validar` com comparação normalizada (trim + minúsculas, `Locale.ROOT`).
+- **Decisões e porquê:** `Locale.ROOT` para não depender do idioma da máquina (o clássico do "i" turco).
+- **Arquivos tocados:** `servico/PoliticaDeSegregacao.java`, `servico/PoliticaDeSegregacaoTest.java`
+- **Verificação:** `./mvnw -q test -Dtest=PoliticaDeSegregacaoTest` → 4 testes verdes
+- **Próximo passo concreto:** T005 (teto de refeição).
