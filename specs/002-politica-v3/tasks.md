@@ -77,7 +77,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\servico\ControleDeTetoDiario.java`, `src\main\java\com\orbe\reembolso\servico\DiaRefeicaoRepository.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoRepository.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\api\TratadorDeErros.java`, `src\test\java\com\orbe\reembolso\servico\ControleDeTetoDiarioTest.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoConcorrenciaTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T016 [R5,R7,R8,R9] Uniformize os erros novos em Problem Details sem restringir o contrato v2.
+- [x] T016 [R5,R7,R8,R9] Uniformize os erros novos em Problem Details sem restringir o contrato v2.
       Arquivos: `src\main\java\com\orbe\reembolso\api\TratadorDeErros.java`, `src\main\java\com\orbe\reembolso\api\DecisaoRequest.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoVigenciaApiTest.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoConcorrenciaTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

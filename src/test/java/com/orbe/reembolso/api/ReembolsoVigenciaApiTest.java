@@ -120,6 +120,8 @@ class ReembolsoVigenciaApiTest {
 
         decidirLegado(id, "aprovacao")
                 .andExpect(status().isOk())
+                .andExpect(jsonPath("$.motivoDecisao").value(nullValue()))
+                .andExpect(jsonPath("$.historico", hasSize(0)))
                 .andExpect(jsonPath("$.valor").value(5000.01))
                 .andExpect(jsonPath("$.status").value("APROVADA"))
                 .andExpect(jsonPath("$.decididoPor").value("responsavel-antigo"))
@@ -202,6 +204,10 @@ class ReembolsoVigenciaApiTest {
         decidirLegado(id, "rejeicao")
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.status").value("REJEITADA"))
+                .andExpect(jsonPath("$.decididoPor").value("responsavel-antigo"))
+                .andExpect(jsonPath("$.decididoEm").value(MOMENTO_DECISAO))
+                .andExpect(jsonPath("$.etapaPendente").value(nullValue()))
+                .andExpect(jsonPath("$.historico", hasSize(0)))
                 .andExpect(jsonPath("$.motivoDecisao").value(nullValue()));
         verificarLegado(id, "REJEITADA")
                 .andExpect(jsonPath("$.decididoPor").value("responsavel-antigo"))

@@ -19,6 +19,8 @@ import java.time.LocalDateTime;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -677,6 +679,84 @@ class ReembolsoPoliticaV3ApiTest {
                 422, "papel");
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"", "{\"responsavel\":", "{\"responsavel\":\"bruno\",}",
+            "{\"responsavel\":\"bruno\",\"papel\":\"DESCONHECIDO\"}",
+            "{\"responsavel\":\"bruno\",\"etapa\":\"DESCONHECIDA\"}",
+            "{\"responsavel\":\"bruno\",\"papel\":\"gestor\"}",
+            "{\"responsavel\":\"bruno\",\"etapa\":\"gestor\"}"})
+    void jsonIlegivelOuEnumInvalidoRetornaProblemaSemAlterarHistorico(String corpo) throws Exception {
+        long id = submeter("HOSPEDAGEM", "800.00");
+        aprovar(id, "GESTOR", "bruno").andExpect(status().isOk());
+
+        recusarSemAlterar(id, corpo, 400, "JSON")
+                .andExpect(jsonPath("$.detail").value(
+                        "O corpo deve conter JSON válido, com tipos e valores de enum reconhecidos."))
+                .andExpect(jsonPath("$.campos").doesNotExist());
+        recusarRejeicaoSemAlterar(id, corpo, 400, "JSON")
+                .andExpect(jsonPath("$.detail").value(
+                        "O corpo deve conter JSON válido, com tipos e valores de enum reconhecidos."))
+                .andExpect(jsonPath("$.campos").doesNotExist());
+    }
+
+    @Test
+    void preservaLimitesDeFormatoSemTornarMotivoObrigatorioNaAprovacao() throws Exception {
+        long id = submeter("HOSPEDAGEM", "800.00");
+        for (String campo : new String[] {"responsavel", "motivo"}) {
+            String corpo = JsonPath.parse(declaracaoGestor())
+                    .put("$", campo, "x".repeat(campo.equals("responsavel") ? 81 : 501)).jsonString();
+            recusarSemAlterar(id, corpo, 400, "inválidos")
+                    .andExpect(jsonPath("$.campos." + campo).isNotEmpty());
+            recusarRejeicaoSemAlterar(id, corpo, 400, "inválidos")
+                    .andExpect(jsonPath("$.campos." + campo).isNotEmpty());
+        }
+        String limite = "x".repeat(80);
+        aprovarDeclaracao(id, JsonPath.parse(declaracaoGestor())
+                .set("$.responsavel", limite).set("$.gestorImediato", limite)
+                .put("$", "motivo", "x".repeat(500)).jsonString())
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.historico[0].responsavel").value(limite))
+                .andExpect(jsonPath("$.historico[0].motivo").value(nullValue()));
+    }
+
+    @Test
+    void pedidoAusenteRetornaProblema404SemCriarPedidoOuEvento() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        long ausente = id + 1;
+        Object antes = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
+        String caminho = "/reembolsos/" + ausente;
+        verificarProblema(mvc.perform(get(caminho)), 404, caminho, "Não encontrado")
+                .andExpect(jsonPath("$.detail").value(containsString(Long.toString(ausente))));
+        verificarProblema(aprovarDeclaracao(ausente, declaracaoGestor()), 404,
+                caminho + "/aprovacao", "Não encontrado");
+        verificarProblema(rejeitarDeclaracao(ausente,
+                declaracaoRejeicao("GESTOR", "bruno", "Despesa particular")), 404,
+                caminho + "/rejeicao", "Não encontrado");
+        assertThat(repositorio.count()).isEqualTo(1);
+        assertThat((Object) JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$"))
+                .isEqualTo(antes);
+    }
+
+    private ResultActions verificarProblema(ResultActions resultado, int codigo, String caminho, String titulo)
+            throws Exception {
+        return resultado.andExpect(status().is(codigo))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
+                .andExpect(jsonPath("$.type").value("about:blank"))
+                .andExpect(jsonPath("$.status").value(codigo))
+                .andExpect(jsonPath("$.title").value(titulo))
+                .andExpect(jsonPath("$.detail").isNotEmpty())
+                .andExpect(jsonPath("$.instance").value(caminho));
+    }
+
+    private String tituloDaRecusa(int codigo) {
+        return switch (codigo) {
+            case 400 -> "Entrada inválida";
+            case 409 -> "Transição de status inválida";
+            case 422 -> "Regra de negócio violada";
+            default -> throw new IllegalArgumentException("Código de recusa não previsto: " + codigo);
+        };
+    }
+
     private String declaracaoRejeicao(String etapa, String responsavel, String motivo) {
         return JsonPath.parse(declaracaoGestor())
                 .set("$.etapa", etapa).set("$.papel", etapa).set("$.responsavel", responsavel)
@@ -691,7 +771,8 @@ class ReembolsoPoliticaV3ApiTest {
     private ResultActions recusarRejeicaoSemAlterar(long id, String corpo, int codigo, String explicacao)
             throws Exception {
         Object antes = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
-        ResultActions resultado = rejeitarDeclaracao(id, corpo)
+        ResultActions resultado = verificarProblema(rejeitarDeclaracao(id, corpo), codigo,
+                "/reembolsos/" + id + "/rejeicao", tituloDaRecusa(codigo))
                 .andExpect(status().is(codigo))
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.status").value(codigo))
@@ -734,7 +815,8 @@ class ReembolsoPoliticaV3ApiTest {
     private ResultActions recusarSemAlterar(long id, String corpo, int codigo, String explicacao)
             throws Exception {
         Object antes = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
-        ResultActions resultado = aprovarDeclaracao(id, corpo)
+        ResultActions resultado = verificarProblema(aprovarDeclaracao(id, corpo), codigo,
+                "/reembolsos/" + id + "/aprovacao", tituloDaRecusa(codigo))
                 .andExpect(status().is(codigo))
                 .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
                 .andExpect(jsonPath("$.status").value(codigo))

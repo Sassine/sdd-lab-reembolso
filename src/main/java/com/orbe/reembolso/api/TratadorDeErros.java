@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -62,6 +63,12 @@ public class TratadorDeErros {
                 .forEach(erro -> campos.putIfAbsent(erro.getField(), erro.getDefaultMessage()));
         problema.setProperty("campos", campos);
         return problema;
+    }
+
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    ProblemDetail jsonInvalido(HttpMessageNotReadableException e) {
+        return problema(HttpStatus.BAD_REQUEST, "Entrada inválida",
+                "O corpo deve conter JSON válido, com tipos e valores de enum reconhecidos.");
     }
 
     private static ProblemDetail problema(HttpStatusCode status, String titulo, String detalhe) {

@@ -199,3 +199,14 @@
 - **Commit:** esta entrada integra `T015: comprovar reservas concorrentes e liberacao de saldo`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T016 — uniformizar erros novos em Problem Details sem restringir v2.
+
+## 2026-10-21 19:37 · T016 · concluída
+
+- **Objetivo da sessão:** uniformizar os novos erros HTTP sem restringir o contrato legado.
+- **O que foi feito:** implementador acrescentou handler seguro para JSON ilegível/enum inválido e testes de erros completos, limites, 404, concorrência JPA e compatibilidade v2. Revisão independente APROVADA.
+- **Decisões e porquê:** handlers de concorrência reutilizados; DTO não alterado, mantendo campos condicionais e motivo opcional v2. Nenhuma conversão genérica de SQL em conflito ou duplicidade.
+- **Arquivos tocados:** `TratadorDeErros.java`, `ReembolsoPoliticaV3ApiTest.java`, `ReembolsoVigenciaApiTest.java`, `ReembolsoConcorrenciaTest.java`, nos caminhos de T016, checkbox e este log.
+- **Verificação:** RED com 7 falhas de conteúdo Problem Details antes do handler; GREEN de 70 testes focados. Gate completo verde por implementador e orquestrador; diff limpo.
+- **Commit:** esta entrada integra `T016: uniformizar erros v3 em Problem Details`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T017 — contextualizar a spec 001 como contrato legado v2.

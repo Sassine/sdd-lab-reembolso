@@ -53,6 +53,7 @@ import org.springframework.dao.CannotAcquireLockException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.ObjectOptimisticLockingFailureException;
+import org.springframework.orm.jpa.JpaOptimisticLockingFailureException;
 import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
 import org.springframework.test.util.AopTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
@@ -475,11 +476,13 @@ class ReembolsoConcorrenciaTest {
         assertThat(problema.path("title").asText()).isEqualTo("Conflito de concorrência");
         assertThat(problema.path("detail").asText())
                 .isEqualTo("Outra operação disputou este pedido. Consulte o estado atual antes de decidir novamente.");
+        assertThat(problema.path("instance").asText()).isEqualTo("/reembolsos/" + id + "/aprovacao");
         conferirSemDecisao(id);
     }
 
     static Stream<RuntimeException> conflitosDePersistencia() {
         return Stream.of(new ObjectOptimisticLockingFailureException(Reembolso.class, 1L),
+                new JpaOptimisticLockingFailureException(new OptimisticLockException("SQL sensível")),
                 new OptimisticLockException("versão concorrente"),
                 new CannotAcquireLockException("lock concorrente"),
                 new PessimisticLockException("lock concorrente"),
@@ -578,6 +581,7 @@ class ReembolsoConcorrenciaTest {
         assertThat(conflito.path("title").asText()).isEqualTo("Conflito de concorrência");
         assertThat(conflito.path("detail").asText())
                 .isEqualTo("Outra operação disputou este pedido. Consulte o estado atual antes de decidir novamente.");
+        assertThat(conflito.path("instance").asText()).isEqualTo(perdedor.getRequest().getRequestURI());
         String autorVencedor = vencedor == primeiro ? autorA : autorB;
         assertThat(aceito.path("decididoPor").asText()).isEqualTo(autorVencedor);
         boolean rejeitada = vencedor == segundo && rejeitarSegundo;
