@@ -89,3 +89,14 @@
 - **Commit:** esta entrada integra `T005: implementar politica de aprovacao por alcada`; consultar o hash com `git log --oneline --grep="^T005:"`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T006 — implementar a rejeição pela etapa atual com motivo não branco.
+
+## 2026-10-21 18:32 · T006 · concluída
+
+- **Objetivo da sessão:** concluir a spec inteira, com paralelismo isolado autorizado pelo usuário em exceção à regra de uma tarefa por sessão.
+- **O que foi feito:** implementador em worktree exclusivo criou PoliticaDeRejeicao e 18 testes; autorização delegada à T004 e motivo não branco obrigatório, sem mutação do agregado ou mudança de v2. Revisão independente APROVADA.
+- **Decisões e porquê:** T006–T008 executadas simultaneamente em worktrees separados; integração e registros feitos sequencialmente pelo orquestrador. Mantidos gate, revisão e commit por tarefa. Sem push automático.
+- **Arquivos tocados:** `src\main\java\com\orbe\reembolso\servico\PoliticaDeRejeicao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeRejeicaoTest.java`, checkbox de `tasks.md` e este log.
+- **Verificação:** implementador registrou RED antes da classe e GREEN com 18 testes. Gate completo verde no worktree e, pelo orquestrador, após integrar o lote T006–T008; nenhuma checagem omitida. Diff sem problemas.
+- **Commit:** esta entrada integra `T006: validar rejeicao por etapa com motivo obrigatorio`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** registrar T007 e T008 já revisadas e verificadas; depois iniciar T009.

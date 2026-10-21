@@ -33,7 +33,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeAprovacao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeAprovacaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T006 [P] [R7] Implemente a rejeição pela etapa atual com motivo não branco.
+- [x] T006 [P] [R7] Implemente a rejeição pela etapa atual com motivo não branco.
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeRejeicao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeRejeicaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
