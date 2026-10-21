@@ -20,7 +20,7 @@
 - [x] T004 [P] [R5] PoliticaDeSegregacao
       Arquivos: `servico/PoliticaDeSegregacao.java`, `servico/PoliticaDeSegregacaoTest.java`
       Verificação: `./mvnw -q test -Dtest=PoliticaDeSegregacaoTest`
-- [ ] T005 [P] [R6] PoliticaTetoRefeicao e soma diária no repositório
+- [x] T005 [P] [R6] PoliticaTetoRefeicao e soma diária no repositório
       Arquivos: `servico/PoliticaTetoRefeicao.java`, `servico/ReembolsoRepository.java`, `servico/PoliticaTetoRefeicaoTest.java`
       Verificação: `./mvnw -q test -Dtest=PoliticaTetoRefeicaoTest`
 

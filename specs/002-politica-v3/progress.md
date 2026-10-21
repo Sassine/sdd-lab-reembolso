@@ -35,3 +35,12 @@
 - **Arquivos tocados:** `servico/PoliticaDeSegregacao.java`, `servico/PoliticaDeSegregacaoTest.java`
 - **Verificação:** `./mvnw -q test -Dtest=PoliticaDeSegregacaoTest` → 4 testes verdes
 - **Próximo passo concreto:** T005 (teto de refeição).
+
+## 2026-10-21 10:41 · T005 · concluída
+
+- **Objetivo da sessão:** teto de R$ 120,00 por colaborador e dia (R6).
+- **O que foi feito:** `ReembolsoRepository#somarValorPorDia` (JPQL, ignora um status) e `PoliticaTetoRefeicao#validar` com mensagem que cita o já existente e o total.
+- **Decisões e porquê:** a consulta devolve `null` sem pedidos e a política trata; evitei `coalesce(sum, 0)` porque mistura tipos no Hibernate 6. Valores formatados à mão (`R$ 100,00`) em vez de `NumberFormat`, que usa espaço não separável e quebra comparação de texto.
+- **Arquivos tocados:** `servico/PoliticaTetoRefeicao.java`, `servico/ReembolsoRepository.java`, `servico/PoliticaTetoRefeicaoTest.java`
+- **Verificação:** `./mvnw -q test -Dtest=PoliticaTetoRefeicaoTest` → 5 testes verdes (`@DataJpaTest`)
+- **Próximo passo concreto:** T006, ligar tudo no serviço e na API (sequencial; mexe em vários arquivos compartilhados).
