@@ -144,3 +144,14 @@
 - **Commit:** esta entrada integra `T010: comprovar autorizacao v3 e autoria historica`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T011 — integrar rejeição v3 com registro exclusivo de decisões aceitas.
+
+## 2026-10-21 18:52 · T011 · concluída
+
+- **Objetivo da sessão:** integrar rejeição v3 por etapa com histórico exclusivo das decisões aceitas.
+- **O que foi feito:** implementador ligou comando completo e política existente, preservando v2; 10 testes novos cobrem CA11–CA13 e CA28–CA32, declarações e consultas posteriores. Revisão independente APROVADA.
+- **Decisões e porquê:** reutilizada PoliticaDeRejeicao sem duplicação; Clock e flush transacional existentes mantidos. Reserva e locks ficam para T012.
+- **Arquivos tocados:** `ReembolsoController.java`, `ReembolsoService.java`, `ReembolsoPoliticaV3ApiTest.java`, nos caminhos de T011, checkbox e este log.
+- **Verificação:** RED com 10 falhas funcionais antes do wiring; GREEN com 26 testes API. Gate completo verde por implementador e orquestrador; diff limpo.
+- **Commit:** esta entrada integra `T011: integrar rejeicao v3 preservando historico`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T012 — integrar reserva diária de refeições sob bloqueio persistente.

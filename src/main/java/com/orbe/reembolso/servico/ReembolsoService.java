@@ -21,15 +21,17 @@ public class ReembolsoService {
     private final PoliticaDePrazo politicaDePrazo;
     private final PoliticaDeVigencia politicaDeVigencia;
     private final PoliticaDeAprovacao politicaDeAprovacao;
+    private final PoliticaDeRejeicao politicaDeRejeicao;
     private final Clock clock;
 
     public ReembolsoService(ReembolsoRepository repositorio, PoliticaDePrazo politicaDePrazo,
                             PoliticaDeVigencia politicaDeVigencia, PoliticaDeAprovacao politicaDeAprovacao,
-                            Clock clock) {
+                            PoliticaDeRejeicao politicaDeRejeicao, Clock clock) {
         this.repositorio = repositorio;
         this.politicaDePrazo = politicaDePrazo;
         this.politicaDeVigencia = politicaDeVigencia;
         this.politicaDeAprovacao = politicaDeAprovacao;
+        this.politicaDeRejeicao = politicaDeRejeicao;
         this.clock = clock;
     }
 
@@ -69,10 +71,15 @@ public class ReembolsoService {
         return repositorio.saveAndFlush(reembolso);
     }
 
-    public Reembolso rejeitar(Long id, String responsavel, String motivo) {
+    public Reembolso rejeitar(Long id, DecidirReembolso comando) {
         LocalDateTime quando = agora();
         Reembolso reembolso = buscar(id);
-        reembolso.rejeitar(responsavel, motivo, quando);
+        if (politicaDe(reembolso) == VersaoPolitica.V2) {
+            reembolso.rejeitar(comando.responsavel(), comando.motivo(), quando);
+        } else {
+            politicaDeRejeicao.validar(reembolso, comando);
+            reembolso.rejeitar(comando.etapa(), comando.responsavel(), comando.motivo(), quando);
+        }
         return repositorio.saveAndFlush(reembolso);
     }
 

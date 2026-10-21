@@ -55,7 +55,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\api\DecisaoRequest.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeAutorizacao.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeAprovacao.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T011 [R6,R7] Integre a rejeição v3 com registro exclusivo de decisões aceitas.
+- [x] T011 [R6,R7] Integre a rejeição v3 com registro exclusivo de decisões aceitas.
       Arquivos: `src\main\java\com\orbe\reembolso\api\ReembolsoController.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeRejeicao.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

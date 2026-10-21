@@ -51,7 +51,7 @@ public class ReembolsoController {
 
     @PostMapping("/{id}/rejeicao")
     public ReembolsoResponse rejeitar(@PathVariable Long id, @Valid @RequestBody DecisaoRequest decisao) {
-        return resposta(servico.rejeitar(id, decisao.responsavel().trim(), decisao.motivo()));
+        return resposta(servico.rejeitar(id, decisao.paraComando()));
     }
 
     private ReembolsoResponse resposta(Reembolso reembolso) {

@@ -297,6 +297,208 @@ class ReembolsoPoliticaV3ApiTest {
         verificarAguardandoGestor(id);
     }
 
+    @Test
+    void rejeitaNoFinanceiroPreservandoGestor() throws Exception {
+        long id = submeter("HOSPEDAGEM", "800.00");
+        aprovar(id, "GESTOR", "bruno").andExpect(status().isOk());
+        agora(RelogioPoliticaV3DeTeste.AGORA.plusHours(1));
+
+        rejeitarDeclaracao(id, declaracaoRejeicao("FINANCEIRO", " carla ",
+                "Despesa sem justificativa de serviço"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("REJEITADA"));
+
+        verificarRejeicao(id, "FINANCEIRO", "carla", "2026-11-03T11:00:00",
+                "Despesa sem justificativa de serviço", 2)
+                .andExpect(jsonPath("$.historico[0].etapa").value("GESTOR"))
+                .andExpect(jsonPath("$.historico[0].resultado").value("APROVADA"))
+                .andExpect(jsonPath("$.historico[0].responsavel").value("bruno"))
+                .andExpect(jsonPath("$.historico[0].quando").value("2026-11-03T10:00:00"))
+                .andExpect(jsonPath("$.historico[0].motivo").value(nullValue()));
+        agora(RelogioPoliticaV3DeTeste.AGORA.plusHours(2));
+        recusarSemAlterar(id, declaracaoRejeicao("FINANCEIRO", "carla", "Outro motivo"),
+                409, "REJEITADA");
+        recusarRejeicaoSemAlterar(id, declaracaoRejeicao("FINANCEIRO", "carla", "Outro motivo"),
+                409, "REJEITADA");
+    }
+
+    @Test
+    void rejeitaNoGestorComMotivo() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+
+        rejeitarDeclaracao(id, declaracaoRejeicao("GESTOR", " bruno ", "Despesa particular"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.motivoDecisao").value("Despesa particular"));
+
+        verificarRejeicao(id, "GESTOR", "bruno", "2026-11-03T10:00:00", "Despesa particular", 1);
+        recusarSemAlterar(id, declaracaoGestor(), 409, "REJEITADA");
+    }
+
+    @Test
+    void recusaRejeicaoSemMotivo() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        recusarRejeicaoSemAlterar(id, declaracaoGestor(), 422, "motivo");
+        recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracaoGestor())
+                .put("$", "motivo", null).jsonString(), 422, "motivo");
+        recusarRejeicaoSemAlterar(id, declaracaoRejeicao("GESTOR", "bruno", ""), 422, "motivo");
+        verificarAguardandoGestor(id);
+    }
+
+    @Test
+    void financeiroNaoRejeitaAntesDoGestor() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        recusarRejeicaoSemAlterar(id, declaracaoRejeicao("FINANCEIRO", "carla", "Despesa particular"),
+                409, "FINANCEIRO");
+        verificarAguardandoGestor(id);
+    }
+
+    @Test
+    void recusaAutorrejeicao() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        String corpo = JsonPath.parse(declaracaoRejeicao("GESTOR", " ana ", "Cancelar despesa"))
+                .set("$.gestorImediato", " ana ").jsonString();
+        recusarRejeicaoSemAlterar(id, corpo, 422, "próprio pedido");
+        verificarAguardandoGestor(id);
+    }
+
+    @Test
+    void gestorNaoRejeitaTambemNoFinanceiro() throws Exception {
+        long id = submeter("HOSPEDAGEM", "800.00");
+        aprovar(id, "GESTOR", "bruno").andExpect(status().isOk());
+        agora(RelogioPoliticaV3DeTeste.AGORA.plusHours(1));
+        String corpo = JsonPath.parse(declaracaoRejeicao("FINANCEIRO", " bruno ", "Despesa particular"))
+                .set("$.gestorImediato", " diego ").jsonString();
+        recusarRejeicaoSemAlterar(id, corpo, 422, "pessoa distinta");
+        consultar(id)
+                .andExpect(jsonPath("$.status").value("AGUARDANDO_FINANCEIRO"))
+                .andExpect(jsonPath("$.etapaPendente").value("FINANCEIRO"))
+                .andExpect(jsonPath("$.decididoPor").value("bruno"))
+                .andExpect(jsonPath("$.decididoEm").value("2026-11-03T10:00:00"))
+                .andExpect(jsonPath("$.motivoDecisao").value(nullValue()))
+                .andExpect(jsonPath("$.historico", hasSize(1)))
+                .andExpect(jsonPath("$.historico[0].resultado").value("APROVADA"))
+                .andExpect(jsonPath("$.historico[0].responsavel").value("bruno"));
+    }
+
+    @Test
+    void historicoContemSomenteDecisoesAceitas() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        String semAtribuicao = JsonPath.parse(declaracaoGestor())
+                .set("$.responsavel", "carla").jsonString();
+        recusarSemAlterar(id, semAtribuicao, 422, "gestor imediato");
+        agora(RelogioPoliticaV3DeTeste.AGORA.plusHours(1));
+
+        rejeitarDeclaracao(id, declaracaoRejeicao("GESTOR", "bruno", "Despesa particular"))
+                .andExpect(status().isOk());
+
+        verificarRejeicao(id, "GESTOR", "bruno", "2026-11-03T11:00:00", "Despesa particular", 1);
+        mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].status").value("REJEITADA"))
+                .andExpect(jsonPath("$[0].historico", hasSize(1)))
+                .andExpect(jsonPath("$[0].historico[0].resultado").value("REJEITADA"))
+                .andExpect(jsonPath("$[0].historico[0].responsavel").value("bruno"))
+                .andExpect(jsonPath("$[0].historico[0].motivo").value("Despesa particular"));
+    }
+
+    @Test
+    void recusaMotivoSoComEspacos() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        recusarRejeicaoSemAlterar(id, declaracaoRejeicao("GESTOR", "bruno", "   "), 422, "motivo");
+        verificarAguardandoGestor(id);
+    }
+
+    @Test
+    void rejeicaoExigeDeclaracoesSemInferirEtapaOuPapel() throws Exception {
+        long id = submeter("TRANSPORTE", "100.00");
+        String declaracao = declaracaoRejeicao("GESTOR", "bruno", "Despesa particular");
+        for (String campo : new String[] {"etapa", "papel", "colaboradorVinculado", "gestorImediato"}) {
+            String explicacao = switch (campo) {
+                case "colaboradorVinculado" -> "vínculo";
+                case "gestorImediato" -> "gestor imediato";
+                default -> campo;
+            };
+            recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracao).delete("$." + campo).jsonString(),
+                    422, explicacao);
+            recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracao).set("$." + campo, null).jsonString(),
+                    422, explicacao);
+        }
+        for (String campo : new String[] {"colaboradorVinculado", "gestorImediato"}) {
+            recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracao).set("$." + campo, "   ").jsonString(),
+                    422, campo.equals("colaboradorVinculado") ? "vínculo" : "gestor imediato");
+        }
+        recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracao)
+                .set("$.responsavel", "diego").jsonString(), 422, "gestor imediato");
+        recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracao)
+                .set("$.papel", "FINANCEIRO").jsonString(), 422, "papel");
+        recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracao)
+                .set("$.colaboradorVinculado", "outra").jsonString(), 422, "vínculo");
+        for (String corpo : new String[] {
+                JsonPath.parse(declaracao).delete("$.responsavel").jsonString(),
+                JsonPath.parse(declaracao).set("$.responsavel", null).jsonString(),
+                JsonPath.parse(declaracao).set("$.responsavel", "   ").jsonString()}) {
+            recusarRejeicaoSemAlterar(id, corpo, 400, "inválidos")
+                    .andExpect(jsonPath("$.campos.responsavel").exists());
+        }
+        verificarAguardandoGestor(id);
+    }
+
+    @Test
+    void rejeicaoFinanceiraRecusadaPreservaAprovacaoAnterior() throws Exception {
+        long id = submeter("HOSPEDAGEM", "800.00");
+        aprovar(id, "GESTOR", "bruno").andExpect(status().isOk());
+        agora(RelogioPoliticaV3DeTeste.AGORA.plusHours(1));
+        recusarRejeicaoSemAlterar(id, declaracaoRejeicao("FINANCEIRO", "carla", "   "), 422, "motivo");
+        recusarRejeicaoSemAlterar(id, declaracaoRejeicao("GESTOR", "bruno", "Despesa particular"),
+                409, "GESTOR");
+        recusarRejeicaoSemAlterar(id, JsonPath.parse(declaracaoRejeicao(
+                "FINANCEIRO", "carla", "Despesa particular")).set("$.papel", "GESTOR").jsonString(),
+                422, "papel");
+    }
+
+    private String declaracaoRejeicao(String etapa, String responsavel, String motivo) {
+        return JsonPath.parse(declaracaoGestor())
+                .set("$.etapa", etapa).set("$.papel", etapa).set("$.responsavel", responsavel)
+                .put("$", "motivo", motivo).jsonString();
+    }
+
+    private ResultActions rejeitarDeclaracao(long id, String corpo) throws Exception {
+        return mvc.perform(post("/reembolsos/{id}/rejeicao", id)
+                .contentType(MediaType.APPLICATION_JSON).content(corpo));
+    }
+
+    private ResultActions recusarRejeicaoSemAlterar(long id, String corpo, int codigo, String explicacao)
+            throws Exception {
+        Object antes = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
+        ResultActions resultado = rejeitarDeclaracao(id, corpo)
+                .andExpect(status().is(codigo))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
+                .andExpect(jsonPath("$.status").value(codigo))
+                .andExpect(jsonPath("$.detail").value(containsString(explicacao)));
+        Object depois = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
+        assertThat(depois).as("Rejeição recusada não altera pedido, autoria ou histórico").isEqualTo(antes);
+        return resultado;
+    }
+
+    private ResultActions verificarRejeicao(long id, String etapa, String responsavel, String quando,
+                                            String motivo, int eventos) throws Exception {
+        String evento = "$.historico[" + (eventos - 1) + "]";
+        return consultar(id)
+                .andExpect(jsonPath("$.status").value("REJEITADA"))
+                .andExpect(jsonPath("$.politica").value("V3"))
+                .andExpect(jsonPath("$.etapaPendente").value(nullValue()))
+                .andExpect(jsonPath("$.decididoPor").value(responsavel))
+                .andExpect(jsonPath("$.decididoEm").value(quando))
+                .andExpect(jsonPath("$.motivoDecisao").value(motivo))
+                .andExpect(jsonPath("$.historico", hasSize(eventos)))
+                .andExpect(jsonPath(evento + ".etapa").value(etapa))
+                .andExpect(jsonPath(evento + ".resultado").value("REJEITADA"))
+                .andExpect(jsonPath(evento + ".responsavel").value(responsavel))
+                .andExpect(jsonPath(evento + ".quando").value(quando))
+                .andExpect(jsonPath(evento + ".motivo").value(motivo));
+    }
+
     private String declaracaoGestor() {
         return """
                 {"responsavel":" bruno ","papel":"GESTOR","colaboradorVinculado":" ana ",
