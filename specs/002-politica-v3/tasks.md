@@ -15,7 +15,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\VersaoPolitica.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeVigencia.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDePrazo.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeVigenciaTest.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDePrazoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T002 [R2,R3,R6,R7] Modele as transições por etapa com histórico de decisões aceitas no agregado.
+- [x] T002 [R2,R3,R6,R7] Modele as transições por etapa com histórico de decisões aceitas no agregado.
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\main\java\com\orbe\reembolso\dominio\StatusReembolso.java`, `src\main\java\com\orbe\reembolso\dominio\EtapaAprovacao.java`, `src\main\java\com\orbe\reembolso\dominio\PapelDeclarado.java`, `src\main\java\com\orbe\reembolso\dominio\DecisaoReembolso.java`, `src\main\java\com\orbe\reembolso\servico\DecidirReembolso.java`, `src\test\java\com\orbe\reembolso\dominio\ReembolsoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

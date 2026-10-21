@@ -3,6 +3,8 @@ package com.orbe.reembolso.dominio;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +14,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "reembolso")
@@ -55,6 +58,9 @@ public class Reembolso {
 
     private LocalDateTime decididoEm;
 
+    @Transient
+    private final List<DecisaoReembolso> historico = new ArrayList<>();
+
     protected Reembolso() {
         // exigido pelo JPA
     }
@@ -83,6 +89,33 @@ public class Reembolso {
         registrarDecisao(responsavel, motivo, quando);
     }
 
+    /**
+     * Aceita uma aprovação já autorizada pelas políticas.
+     * A política seleciona se o gestor exige Financeiro; a etapa financeira sempre conclui.
+     */
+    public void aprovar(EtapaAprovacao etapa, String responsavel, LocalDateTime quando,
+                        boolean exigeFinanceiro) {
+        exigirEtapa(etapa, "aprovar na etapa " + etapa);
+        this.status = etapa == EtapaAprovacao.GESTOR && exigeFinanceiro
+                ? StatusReembolso.AGUARDANDO_FINANCEIRO : StatusReembolso.APROVADA;
+        registrarDecisao(etapa, StatusReembolso.APROVADA, responsavel, null, quando);
+    }
+
+    /** Aceita uma rejeição cuja autorização e motivo já foram validados pelas políticas. */
+    public void rejeitar(EtapaAprovacao etapa, String responsavel, String motivo, LocalDateTime quando) {
+        exigirEtapa(etapa, "rejeitar na etapa " + etapa);
+        this.status = StatusReembolso.REJEITADA;
+        registrarDecisao(etapa, StatusReembolso.REJEITADA, responsavel, motivo, quando);
+    }
+
+    private void exigirEtapa(EtapaAprovacao etapa, String operacao) {
+        boolean etapaAtual = (etapa == EtapaAprovacao.GESTOR && status == StatusReembolso.SUBMETIDA)
+                || (etapa == EtapaAprovacao.FINANCEIRO && status == StatusReembolso.AGUARDANDO_FINANCEIRO);
+        if (!etapaAtual) {
+            throw new TransicaoDeStatusInvalidaException(status, operacao);
+        }
+    }
+
     private void exigirStatus(StatusReembolso esperado, String operacao) {
         if (status != esperado) {
             throw new TransicaoDeStatusInvalidaException(status, operacao);
@@ -93,6 +126,13 @@ public class Reembolso {
         this.decididoPor = responsavel;
         this.motivoDecisao = motivo;
         this.decididoEm = quando;
+    }
+
+    private void registrarDecisao(EtapaAprovacao etapa, StatusReembolso resultado, String responsavel,
+                                 String motivo, LocalDateTime quando) {
+        historico.add(new DecisaoReembolso(historico.size() + 1, etapa, resultado,
+                responsavel, quando, motivo));
+        registrarDecisao(responsavel, motivo, quando);
     }
 
     public Long getId() { return id; }
@@ -107,4 +147,5 @@ public class Reembolso {
     public String getDecididoPor() { return decididoPor; }
     public String getMotivoDecisao() { return motivoDecisao; }
     public LocalDateTime getDecididoEm() { return decididoEm; }
+    public List<DecisaoReembolso> getHistorico() { return List.copyOf(historico); }
 }
