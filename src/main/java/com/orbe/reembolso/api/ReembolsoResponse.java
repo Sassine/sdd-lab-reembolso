@@ -20,12 +20,15 @@ public record ReembolsoResponse(
         LocalDateTime submetidoEm,
         String decididoPor,
         String motivoDecisao,
-        LocalDateTime decididoEm) {
+        LocalDateTime decididoEm,
+        String aprovadorGestor,
+        String aprovadorFinanceiro) {
 
     static ReembolsoResponse de(Reembolso r) {
         return new ReembolsoResponse(
                 r.getId(), r.getColaborador(), r.getCategoria(), r.getValor(), r.getDataDespesa(),
                 r.getCnpjFornecedor(), r.getDescricao(), r.getStatus(), r.getSubmetidoEm(),
-                r.getDecididoPor(), r.getMotivoDecisao(), r.getDecididoEm());
+                r.getDecididoPor(), r.getMotivoDecisao(), r.getDecididoEm(),
+                r.getAprovadorGestor(), r.getAprovadorFinanceiro());
     }
 }

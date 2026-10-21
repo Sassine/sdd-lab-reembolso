@@ -107,12 +107,6 @@ public class Reembolso {
         }
     }
 
-    /** @deprecated substituído pela aprovação com papel (spec 002). Removido na T006. */
-    @Deprecated
-    public void aprovar(String responsavel, LocalDateTime quando) {
-        aprovar(responsavel, PapelAprovador.GESTOR, false, quando);
-    }
-
     /** Spec 002, R8: rejeição vale para qualquer status ainda não aprovado. */
     public void rejeitar(String responsavel, String motivo, LocalDateTime quando) {
         exigirStatus("rejeitar", StatusReembolso.SUBMETIDA, StatusReembolso.AGUARDANDO_FINANCEIRO);

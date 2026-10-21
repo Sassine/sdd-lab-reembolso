@@ -137,7 +137,7 @@ class ReembolsoApiTest {
         return mvc.perform(post("/reembolsos/{id}/" + acao, id)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("""
-                        {"responsavel": "%s"}
+                        {"responsavel": "%s", "papel": "GESTOR"}
                         """.formatted(responsavel)));
     }
 

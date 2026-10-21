@@ -44,3 +44,13 @@
 - **Arquivos tocados:** `servico/PoliticaTetoRefeicao.java`, `servico/ReembolsoRepository.java`, `servico/PoliticaTetoRefeicaoTest.java`
 - **Verificação:** `./mvnw -q test -Dtest=PoliticaTetoRefeicaoTest` → 5 testes verdes (`@DataJpaTest`)
 - **Próximo passo concreto:** T006, ligar tudo no serviço e na API (sequencial; mexe em vários arquivos compartilhados).
+
+## 2026-10-21 14:10 · T006 · concluída
+
+- **Objetivo da sessão:** ligar alçada, segregação e teto ao fluxo real e mudar o contrato de aprovação.
+- **O que foi feito:** `ReembolsoService#submeter` na ordem prazo → alçada → duplicidade → teto; `#aprovar(id, responsavel, papel)` com segregação e `saveAndFlush`; `AprovacaoRequest` com papel obrigatório; resposta com `aprovadorGestor` e `aprovadorFinanceiro`; removido o `aprovar` @Deprecated da entidade.
+- **Decisões e porquê:** `ReembolsoApiTest` mudou só no corpo de aprovação (passa a mandar `"papel": "GESTOR"`). Não é enfraquecimento: o contrato mudou por decisão registrada na spec (21/10, papel obrigatório). Nenhuma asserção foi removida.
+- **Arquivos tocados:** `servico/ReembolsoService.java`, `api/AprovacaoRequest.java`, `api/ReembolsoController.java`, `api/ReembolsoResponse.java`, `dominio/Reembolso.java`, `api/ReembolsoApiTest.java`, `api/AprovacaoPorAlcadaApiTest.java`
+- **Verificação:** `./scripts/verify.sh` → 45 testes verdes, SDD-CHECK OK
+- **Revisor:** aprovado com ressalva: CA14 (concorrência) ainda sem teste, previsto na T007.
+- **Próximo passo concreto:** T007, teste com duas threads aprovando o mesmo pedido.

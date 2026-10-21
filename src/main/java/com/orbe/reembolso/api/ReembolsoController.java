@@ -45,8 +45,8 @@ public class ReembolsoController {
     }
 
     @PostMapping("/{id}/aprovacao")
-    public ReembolsoResponse aprovar(@PathVariable Long id, @Valid @RequestBody DecisaoRequest decisao) {
-        return ReembolsoResponse.de(servico.aprovar(id, decisao.responsavel().trim()));
+    public ReembolsoResponse aprovar(@PathVariable Long id, @Valid @RequestBody AprovacaoRequest aprovacao) {
+        return ReembolsoResponse.de(servico.aprovar(id, aprovacao.responsavel().trim(), aprovacao.papel()));
     }
 
     @PostMapping("/{id}/rejeicao")
