@@ -3,6 +3,7 @@ package com.orbe.reembolso.api;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
@@ -34,6 +35,12 @@ public class TratadorDeErros {
     @ExceptionHandler(TransicaoDeStatusInvalidaException.class)
     ProblemDetail transicao(TransicaoDeStatusInvalidaException e) {
         return problema(HttpStatus.CONFLICT, "Transição de status inválida", e.getMessage());
+    }
+
+    @ExceptionHandler(OptimisticLockingFailureException.class)
+    ProblemDetail concorrencia(OptimisticLockingFailureException e) {
+        return problema(HttpStatus.CONFLICT, "Conflito de concorrência",
+                "O reembolso foi alterado por outra operação ao mesmo tempo. Consulte o estado atual e tente de novo.");
     }
 
     @ExceptionHandler(RecursoNaoEncontradoException.class)

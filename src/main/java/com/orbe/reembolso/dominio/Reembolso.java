@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Version;
 
 @Entity
 @Table(name = "reembolso")
@@ -60,6 +61,10 @@ public class Reembolso {
 
     @Column(length = 80)
     private String aprovadorFinanceiro;
+
+    /** Spec 002, R7: duas aprovações simultâneas, só uma é gravada. */
+    @Version
+    private Long versao;
 
     protected Reembolso() {
         // exigido pelo JPA
