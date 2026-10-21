@@ -1,0 +1,3082 @@
+{
+  "nodes": [
+    {
+      "id": "scripts_sddcheck",
+      "label": "SddCheck.java",
+      "file_type": "code",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "scripts_sddcheck_sddcheck",
+      "label": "SddCheck",
+      "file_type": "code",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L27"
+    },
+    {
+      "id": "scripts_sddcheck_sddcheck_main",
+      "label": ".main()",
+      "file_type": "code",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L38"
+    },
+    {
+      "id": "scripts_sddcheck_sddcheck_verificar",
+      "label": ".verificar()",
+      "file_type": "code",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L71"
+    },
+    {
+      "id": "scripts_sddcheck_sddcheck_lertarefas",
+      "label": ".lerTarefas()",
+      "file_type": "code",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L162"
+    },
+    {
+      "id": "reembolso_reembolsoapplication",
+      "label": "ReembolsoApplication.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "reembolso_reembolsoapplication_reembolsoapplication",
+      "label": "ReembolsoApplication",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L6"
+    },
+    {
+      "id": "reembolso_reembolsoapplication_reembolsoapplication_main",
+      "label": ".main()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L9"
+    },
+    {
+      "id": "api_decisaorequest",
+      "label": "DecisaoRequest.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/DecisaoRequest.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_novoreembolsorequest",
+      "label": "NovoReembolsoRequest.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_novoreembolsorequest_paracomando",
+      "label": "paraComando()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L24"
+    },
+    {
+      "id": "api_reembolsocontroller",
+      "label": "ReembolsoController.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller",
+      "label": "ReembolsoController",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L20"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller_reembolsocontroller",
+      "label": ".ReembolsoController()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L26"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller_submeter",
+      "label": ".submeter()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L30"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller_buscar",
+      "label": ".buscar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L37"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller_listar",
+      "label": ".listar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L42"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller_aprovar",
+      "label": ".aprovar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L47"
+    },
+    {
+      "id": "api_reembolsocontroller_reembolsocontroller_rejeitar",
+      "label": ".rejeitar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L52"
+    },
+    {
+      "id": "api_reembolsoresponse",
+      "label": "ReembolsoResponse.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_reembolsoresponse_de",
+      "label": "de()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L25"
+    },
+    {
+      "id": "api_tratadordeerros",
+      "label": "TratadorDeErros.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros",
+      "label": "TratadorDeErros",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L19"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros_regradenegocio",
+      "label": ".regraDeNegocio()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L24"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros_duplicado",
+      "label": ".duplicado()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L29"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros_transicao",
+      "label": ".transicao()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L34"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros_naoencontrado",
+      "label": ".naoEncontrado()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L39"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros_entradainvalida",
+      "label": ".entradaInvalida()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L44"
+    },
+    {
+      "id": "api_tratadordeerros_tratadordeerros_problema",
+      "label": ".problema()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L54"
+    },
+    {
+      "id": "config_clockconfig",
+      "label": "ClockConfig.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "config_clockconfig_clockconfig",
+      "label": "ClockConfig",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L13"
+    },
+    {
+      "id": "config_clockconfig_clockconfig_clock",
+      "label": ".clock()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L18"
+    },
+    {
+      "id": "dominio_categoria",
+      "label": "Categoria.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Categoria.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_recursonaoencontradoexception",
+      "label": "RecursoNaoEncontradoException.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_recursonaoencontradoexception_recursonaoencontradoexception",
+      "label": "RecursoNaoEncontradoException",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "source_location": "L4"
+    },
+    {
+      "id": "runtimeexception",
+      "label": "RuntimeException",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "dominio_recursonaoencontradoexception_recursonaoencontradoexception_recursonaoencontradoexception",
+      "label": ".RecursoNaoEncontradoException()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "source_location": "L6"
+    },
+    {
+      "id": "dominio_reembolso",
+      "label": "Reembolso.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_reembolso_reembolso",
+      "label": "Reembolso",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L16"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_reembolso",
+      "label": ".Reembolso()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L58"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_aprovar",
+      "label": ".aprovar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L74"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_rejeitar",
+      "label": ".rejeitar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L80"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_exigirstatus",
+      "label": ".exigirStatus()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L86"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_registrardecisao",
+      "label": ".registrarDecisao()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L92"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getid",
+      "label": ".getId()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L98"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getcolaborador",
+      "label": ".getColaborador()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L99"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getcategoria",
+      "label": ".getCategoria()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L100"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getvalor",
+      "label": ".getValor()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L101"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getdatadespesa",
+      "label": ".getDataDespesa()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L102"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getcnpjfornecedor",
+      "label": ".getCnpjFornecedor()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L103"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getdescricao",
+      "label": ".getDescricao()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L104"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getstatus",
+      "label": ".getStatus()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L105"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getsubmetidoem",
+      "label": ".getSubmetidoEm()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L106"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getdecididopor",
+      "label": ".getDecididoPor()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L107"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getmotivodecisao",
+      "label": ".getMotivoDecisao()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L108"
+    },
+    {
+      "id": "dominio_reembolso_reembolso_getdecididoem",
+      "label": ".getDecididoEm()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L109"
+    },
+    {
+      "id": "dominio_reembolsoduplicadoexception",
+      "label": "ReembolsoDuplicadoException.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_reembolsoduplicadoexception_reembolsoduplicadoexception",
+      "label": "ReembolsoDuplicadoException",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "source_location": "L4"
+    },
+    {
+      "id": "runtimeexception",
+      "label": "RuntimeException",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "dominio_reembolsoduplicadoexception_reembolsoduplicadoexception_reembolsoduplicadoexception",
+      "label": ".ReembolsoDuplicadoException()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "source_location": "L6"
+    },
+    {
+      "id": "dominio_regradenegocioexception",
+      "label": "RegraDeNegocioException.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_regradenegocioexception_regradenegocioexception",
+      "label": "RegraDeNegocioException",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "source_location": "L4"
+    },
+    {
+      "id": "runtimeexception",
+      "label": "RuntimeException",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "dominio_regradenegocioexception_regradenegocioexception_regradenegocioexception",
+      "label": ".RegraDeNegocioException()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "source_location": "L6"
+    },
+    {
+      "id": "dominio_statusreembolso",
+      "label": "StatusReembolso.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/StatusReembolso.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_transicaodestatusinvalidaexception",
+      "label": "TransicaoDeStatusInvalidaException.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "dominio_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception",
+      "label": "TransicaoDeStatusInvalidaException",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "source_location": "L4"
+    },
+    {
+      "id": "runtimeexception",
+      "label": "RuntimeException",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "dominio_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception",
+      "label": ".TransicaoDeStatusInvalidaException()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "source_location": "L6"
+    },
+    {
+      "id": "servico_novoreembolso",
+      "label": "NovoReembolso.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/NovoReembolso.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "servico_politicadeprazo",
+      "label": "PoliticaDePrazo.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "servico_politicadeprazo_politicadeprazo",
+      "label": "PoliticaDePrazo",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L14"
+    },
+    {
+      "id": "servico_politicadeprazo_politicadeprazo_politicadeprazo",
+      "label": ".PoliticaDePrazo()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L21"
+    },
+    {
+      "id": "servico_politicadeprazo_politicadeprazo_validar",
+      "label": ".validar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L25"
+    },
+    {
+      "id": "servico_reembolsorepository",
+      "label": "ReembolsoRepository.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "servico_reembolsorepository_reembolsorepository",
+      "label": "ReembolsoRepository",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L11"
+    },
+    {
+      "id": "jparepository",
+      "label": "JpaRepository",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "reembolso",
+      "label": "Reembolso",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "long",
+      "label": "Long",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "servico_reembolsorepository_reembolsorepository_existsbycolaboradorandcnpjfornecedorandvaloranddatadespesa",
+      "label": ".existsByColaboradorAndCnpjFornecedorAndValorAndDataDespesa()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L13"
+    },
+    {
+      "id": "servico_reembolsorepository_reembolsorepository_findbycolaboradororderbydatadespesadesciddesc",
+      "label": ".findByColaboradorOrderByDataDespesaDescIdDesc()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L16"
+    },
+    {
+      "id": "servico_reembolsoservice",
+      "label": "ReembolsoService.java",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice",
+      "label": "ReembolsoService",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L14"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_reembolsoservice",
+      "label": ".ReembolsoService()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L22"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_submeter",
+      "label": ".submeter()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L28"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_aprovar",
+      "label": ".aprovar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L48"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_rejeitar",
+      "label": ".rejeitar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L54"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_buscar",
+      "label": ".buscar()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L60"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_listarporcolaborador",
+      "label": ".listarPorColaborador()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L65"
+    },
+    {
+      "id": "servico_reembolsoservice_reembolsoservice_agora",
+      "label": ".agora()",
+      "file_type": "code",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L70"
+    },
+    {
+      "id": "api_reembolsoapitest",
+      "label": "ReembolsoApiTest.java",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest",
+      "label": "ReembolsoApiTest",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L27"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_limpar",
+      "label": ".limpar()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L38"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_submetereembolsovalido",
+      "label": ".submeteReembolsoValido()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L43"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_recusacnpjmalformatado",
+      "label": ".recusaCnpjMalFormatado()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L52"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_recusareembolsoduplicado",
+      "label": ".recusaReembolsoDuplicado()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L59"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_recusadespesaforadoprazo",
+      "label": ".recusaDespesaForaDoPrazo()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L67"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_aprovareembolsosubmetido",
+      "label": ".aprovaReembolsoSubmetido()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L74"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_naoaprovaduasvezes",
+      "label": ".naoAprovaDuasVezes()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L84"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_rejeitacommotivo",
+      "label": ".rejeitaComMotivo()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L94"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_listaporcolaborador",
+      "label": ".listaPorColaborador()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L108"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_retorna404paraidinexistente",
+      "label": ".retorna404ParaIdInexistente()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L120"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "label": ".submeter()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L126"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_decidir",
+      "label": ".decidir()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L136"
+    },
+    {
+      "id": "api_reembolsoapitest_reembolsoapitest_idde",
+      "label": ".idDe()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L144"
+    },
+    {
+      "id": "servico_politicadeprazotest",
+      "label": "PoliticaDePrazoTest.java",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "servico_politicadeprazotest_politicadeprazotest",
+      "label": "PoliticaDePrazoTest",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L12"
+    },
+    {
+      "id": "servico_politicadeprazotest_politicadeprazotest_aceitadespesadehoje",
+      "label": ".aceitaDespesaDeHoje()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L16"
+    },
+    {
+      "id": "servico_politicadeprazotest_politicadeprazotest_aceitadespesade59diasatras",
+      "label": ".aceitaDespesaDe59DiasAtras()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L21"
+    },
+    {
+      "id": "servico_politicadeprazotest_politicadeprazotest_rejeitadespesade61diasatras",
+      "label": ".rejeitaDespesaDe61DiasAtras()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L26"
+    },
+    {
+      "id": "servico_politicadeprazotest_politicadeprazotest_rejeitadespesanofuturo",
+      "label": ".rejeitaDespesaNoFuturo()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L33"
+    },
+    {
+      "id": "suporte_relogiodeteste",
+      "label": "RelogioDeTeste.java",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "suporte_relogiodeteste_relogiodeteste",
+      "label": "RelogioDeTeste",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L14"
+    },
+    {
+      "id": "suporte_relogiodeteste_relogiodeteste_fixo",
+      "label": ".fixo()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L19"
+    },
+    {
+      "id": "suporte_relogiodeteste_relogiodeteste_relogiofixo",
+      "label": ".relogioFixo()",
+      "file_type": "code",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L24"
+    }
+  ],
+  "edges": [
+    {
+      "source": "scripts_sddcheck",
+      "target": "ioexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L1",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "standardcharsets",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L2",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "files",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "path",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "arraylist",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "hashset",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "linkedhashmap",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "linkedhashset",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "list",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "map",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "set",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "matcher",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L12",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "pattern",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "stream",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck",
+      "target": "scripts_sddcheck_sddcheck",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L27",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck_sddcheck",
+      "target": "scripts_sddcheck_sddcheck_main",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L38",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck_sddcheck",
+      "target": "scripts_sddcheck_sddcheck_verificar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L71",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck_sddcheck",
+      "target": "scripts_sddcheck_sddcheck_lertarefas",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L162",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck_sddcheck_main",
+      "target": "scripts_sddcheck_sddcheck_verificar",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L57",
+      "weight": 1
+    },
+    {
+      "source": "scripts_sddcheck_sddcheck_verificar",
+      "target": "scripts_sddcheck_sddcheck_lertarefas",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/SddCheck.java",
+      "source_location": "L100",
+      "weight": 1
+    },
+    {
+      "source": "reembolso_reembolsoapplication",
+      "target": "springapplication",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "reembolso_reembolsoapplication",
+      "target": "springbootapplication",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "reembolso_reembolsoapplication",
+      "target": "reembolso_reembolsoapplication_reembolsoapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "reembolso_reembolsoapplication_reembolsoapplication",
+      "target": "reembolso_reembolsoapplication_reembolsoapplication_main",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "api_decisaorequest",
+      "target": "notblank",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/DecisaoRequest.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "api_decisaorequest",
+      "target": "size",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/DecisaoRequest.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "bigdecimal",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "digits",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "notblank",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "notnull",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "pattern",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "positive",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "size",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "categoria",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "novoreembolso",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "api_novoreembolsorequest",
+      "target": "api_novoreembolsorequest_paracomando",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "source_location": "L24",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "uri",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "list",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "valid",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "responseentity",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "getmapping",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "pathvariable",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "postmapping",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "requestbody",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L12",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "requestmapping",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "requestparam",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "restcontroller",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L15",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "reembolso",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L17",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "reembolsoservice",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L18",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L20",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller_reembolsocontroller",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L26",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller_submeter",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L30",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller_buscar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L37",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller_listar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L42",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller_aprovar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L47",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsocontroller_reembolsocontroller",
+      "target": "api_reembolsocontroller_reembolsocontroller_rejeitar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "source_location": "L52",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "bigdecimal",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "localdatetime",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "categoria",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "reembolso",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "statusreembolso",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoresponse",
+      "target": "api_reembolsoresponse_de",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "source_location": "L25",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "linkedhashmap",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "map",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "httpstatus",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "httpstatuscode",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "problemdetail",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "methodargumentnotvalidexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "exceptionhandler",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "restcontrolleradvice",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "recursonaoencontradoexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "reembolsoduplicadoexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "regradenegocioexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L15",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "transicaodestatusinvalidaexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L16",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L19",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros_regradenegocio",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L24",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros_duplicado",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L29",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros_transicao",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L34",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros_naoencontrado",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L39",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros_entradainvalida",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L44",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros",
+      "target": "api_tratadordeerros_tratadordeerros_problema",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L54",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros_regradenegocio",
+      "target": "api_tratadordeerros_tratadordeerros_problema",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L26",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros_duplicado",
+      "target": "api_tratadordeerros_tratadordeerros_problema",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L31",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros_transicao",
+      "target": "api_tratadordeerros_tratadordeerros_problema",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L36",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros_naoencontrado",
+      "target": "api_tratadordeerros_tratadordeerros_problema",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L41",
+      "weight": 1
+    },
+    {
+      "source": "api_tratadordeerros_tratadordeerros_entradainvalida",
+      "target": "api_tratadordeerros_tratadordeerros_problema",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "source_location": "L46",
+      "weight": 1
+    },
+    {
+      "source": "config_clockconfig",
+      "target": "clock",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "config_clockconfig",
+      "target": "zoneid",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "config_clockconfig",
+      "target": "bean",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "config_clockconfig",
+      "target": "configuration",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "config_clockconfig",
+      "target": "config_clockconfig_clockconfig",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "config_clockconfig_clockconfig",
+      "target": "config_clockconfig_clockconfig_clock",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "source_location": "L18",
+      "weight": 1
+    },
+    {
+      "source": "dominio_recursonaoencontradoexception",
+      "target": "dominio_recursonaoencontradoexception_recursonaoencontradoexception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_recursonaoencontradoexception_recursonaoencontradoexception",
+      "target": "runtimeexception",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_recursonaoencontradoexception_recursonaoencontradoexception",
+      "target": "dominio_recursonaoencontradoexception_recursonaoencontradoexception_recursonaoencontradoexception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "bigdecimal",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "localdatetime",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "column",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "entity",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "enumtype",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "enumerated",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "generatedvalue",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "generationtype",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L12",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "id",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "table",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso",
+      "target": "dominio_reembolso_reembolso",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L16",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_reembolso",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L58",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_reembolso",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L62",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_aprovar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L74",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_rejeitar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L80",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_exigirstatus",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L86",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_registrardecisao",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L92",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getid",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L98",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getcolaborador",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L99",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getcategoria",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L100",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getvalor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L101",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getdatadespesa",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L102",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getcnpjfornecedor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L103",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getdescricao",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L104",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getstatus",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L105",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getsubmetidoem",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L106",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getdecididopor",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L107",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getmotivodecisao",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L108",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso",
+      "target": "dominio_reembolso_reembolso_getdecididoem",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L109",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso_aprovar",
+      "target": "dominio_reembolso_reembolso_exigirstatus",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L75",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso_aprovar",
+      "target": "dominio_reembolso_reembolso_registrardecisao",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L77",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso_rejeitar",
+      "target": "dominio_reembolso_reembolso_exigirstatus",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L81",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolso_reembolso_rejeitar",
+      "target": "dominio_reembolso_reembolso_registrardecisao",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "source_location": "L83",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolsoduplicadoexception",
+      "target": "dominio_reembolsoduplicadoexception_reembolsoduplicadoexception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolsoduplicadoexception_reembolsoduplicadoexception",
+      "target": "runtimeexception",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_reembolsoduplicadoexception_reembolsoduplicadoexception",
+      "target": "dominio_reembolsoduplicadoexception_reembolsoduplicadoexception_reembolsoduplicadoexception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "dominio_regradenegocioexception",
+      "target": "dominio_regradenegocioexception_regradenegocioexception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_regradenegocioexception_regradenegocioexception",
+      "target": "runtimeexception",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_regradenegocioexception_regradenegocioexception",
+      "target": "dominio_regradenegocioexception_regradenegocioexception_regradenegocioexception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "dominio_transicaodestatusinvalidaexception",
+      "target": "dominio_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception",
+      "target": "runtimeexception",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "dominio_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception",
+      "target": "dominio_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception_transicaodestatusinvalidaexception",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "servico_novoreembolso",
+      "target": "bigdecimal",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/NovoReembolso.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "servico_novoreembolso",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/NovoReembolso.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "servico_novoreembolso",
+      "target": "categoria",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/NovoReembolso.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo",
+      "target": "clock",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo",
+      "target": "chronounit",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo",
+      "target": "component",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo",
+      "target": "regradenegocioexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo",
+      "target": "servico_politicadeprazo_politicadeprazo",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo_politicadeprazo",
+      "target": "servico_politicadeprazo_politicadeprazo_politicadeprazo",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L21",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazo_politicadeprazo",
+      "target": "servico_politicadeprazo_politicadeprazo_validar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "source_location": "L25",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository",
+      "target": "bigdecimal",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository",
+      "target": "list",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository",
+      "target": "jparepository",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository",
+      "target": "reembolso",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository",
+      "target": "servico_reembolsorepository_reembolsorepository",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository_reembolsorepository",
+      "target": "jparepository",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository_reembolsorepository",
+      "target": "reembolso",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository_reembolsorepository",
+      "target": "long",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository_reembolsorepository",
+      "target": "servico_reembolsorepository_reembolsorepository_existsbycolaboradorandcnpjfornecedorandvaloranddatadespesa",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsorepository_reembolsorepository",
+      "target": "servico_reembolsorepository_reembolsorepository_findbycolaboradororderbydatadespesadesciddesc",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "source_location": "L16",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "clock",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "localdatetime",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "list",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "service",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "transactional",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "recursonaoencontradoexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "reembolso",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "reembolsoduplicadoexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L12",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_reembolsoservice",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L22",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_submeter",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L28",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_aprovar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L48",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_rejeitar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L54",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_buscar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L60",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_listarporcolaborador",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L65",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice",
+      "target": "servico_reembolsoservice_reembolsoservice_agora",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L70",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice_submeter",
+      "target": "servico_reembolsoservice_reembolsoservice_agora",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L44",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice_aprovar",
+      "target": "servico_reembolsoservice_reembolsoservice_buscar",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L49",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice_aprovar",
+      "target": "servico_reembolsoservice_reembolsoservice_agora",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L50",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice_rejeitar",
+      "target": "servico_reembolsoservice_reembolsoservice_buscar",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L55",
+      "weight": 1
+    },
+    {
+      "source": "servico_reembolsoservice_reembolsoservice_rejeitar",
+      "target": "servico_reembolsoservice_reembolsoservice_agora",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "source_location": "L56",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "hoje",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "hassize",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "get",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "post",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L6",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "header",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "jsonpath",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "status",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "beforeeach",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L13",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "test",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "autowired",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L15",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "autoconfiguremockmvc",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L16",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "springboottest",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L17",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "import",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L18",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "mediatype",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L19",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "mockmvc",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L20",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "resultactions",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L21",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "jsonpath",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L23",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "reembolsorepository",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L24",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "relogiodeteste",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L25",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L27",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_limpar",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L38",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_submetereembolsovalido",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L43",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_recusacnpjmalformatado",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L52",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_recusareembolsoduplicado",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L59",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_recusadespesaforadoprazo",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L67",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_aprovareembolsosubmetido",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L74",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_naoaprovaduasvezes",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L84",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_rejeitacommotivo",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L94",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_listaporcolaborador",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L108",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_retorna404paraidinexistente",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L120",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L126",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_decidir",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L136",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest",
+      "target": "api_reembolsoapitest_reembolsoapitest_idde",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L144",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_submetereembolsovalido",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L45",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_recusacnpjmalformatado",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L54",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_recusareembolsoduplicado",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L61",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_recusadespesaforadoprazo",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L69",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_aprovareembolsosubmetido",
+      "target": "api_reembolsoapitest_reembolsoapitest_idde",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L76",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_aprovareembolsosubmetido",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L76",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_aprovareembolsosubmetido",
+      "target": "api_reembolsoapitest_reembolsoapitest_decidir",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L78",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_naoaprovaduasvezes",
+      "target": "api_reembolsoapitest_reembolsoapitest_idde",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L86",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_naoaprovaduasvezes",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L86",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_naoaprovaduasvezes",
+      "target": "api_reembolsoapitest_reembolsoapitest_decidir",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L87",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_rejeitacommotivo",
+      "target": "api_reembolsoapitest_reembolsoapitest_idde",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L96",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_rejeitacommotivo",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L96",
+      "weight": 1
+    },
+    {
+      "source": "api_reembolsoapitest_reembolsoapitest_listaporcolaborador",
+      "target": "api_reembolsoapitest_reembolsoapitest_submeter",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "source_location": "L110",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "hoje",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "assertthatcode",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "assertthatthrownby",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "test",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "regradenegocioexception",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "relogiodeteste",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L10",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest",
+      "target": "servico_politicadeprazotest_politicadeprazotest",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L12",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest_politicadeprazotest",
+      "target": "servico_politicadeprazotest_politicadeprazotest_aceitadespesadehoje",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L16",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest_politicadeprazotest",
+      "target": "servico_politicadeprazotest_politicadeprazotest_aceitadespesade59diasatras",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L21",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest_politicadeprazotest",
+      "target": "servico_politicadeprazotest_politicadeprazotest_rejeitadespesade61diasatras",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L26",
+      "weight": 1
+    },
+    {
+      "source": "servico_politicadeprazotest_politicadeprazotest",
+      "target": "servico_politicadeprazotest_politicadeprazotest_rejeitadespesanofuturo",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "source_location": "L33",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "clock",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L3",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "localdate",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L4",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "zoneddatetime",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L5",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "testconfiguration",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L7",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "bean",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L8",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "primary",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L9",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "clockconfig",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L11",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste",
+      "target": "suporte_relogiodeteste_relogiodeteste",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L14",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste_relogiodeteste",
+      "target": "suporte_relogiodeteste_relogiodeteste_fixo",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L19",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste_relogiodeteste",
+      "target": "suporte_relogiodeteste_relogiodeteste_relogiofixo",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L24",
+      "weight": 1
+    },
+    {
+      "source": "suporte_relogiodeteste_relogiodeteste_relogiofixo",
+      "target": "suporte_relogiodeteste_relogiodeteste_fixo",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java",
+      "source_location": "L27",
+      "weight": 1
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "hyperedges": []
+}

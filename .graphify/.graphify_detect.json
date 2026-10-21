@@ -1,0 +1,66 @@
+{
+  "files": {
+    "code": [
+      "mvnw",
+      "scripts/SddCheck.java",
+      "scripts/verify.ps1",
+      "src/main/java/com/orbe/reembolso/ReembolsoApplication.java",
+      "src/main/java/com/orbe/reembolso/api/DecisaoRequest.java",
+      "src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java",
+      "src/main/java/com/orbe/reembolso/api/ReembolsoController.java",
+      "src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java",
+      "src/main/java/com/orbe/reembolso/api/TratadorDeErros.java",
+      "src/main/java/com/orbe/reembolso/config/ClockConfig.java",
+      "src/main/java/com/orbe/reembolso/dominio/Categoria.java",
+      "src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java",
+      "src/main/java/com/orbe/reembolso/dominio/Reembolso.java",
+      "src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java",
+      "src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java",
+      "src/main/java/com/orbe/reembolso/dominio/StatusReembolso.java",
+      "src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java",
+      "src/main/java/com/orbe/reembolso/servico/NovoReembolso.java",
+      "src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java",
+      "src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java",
+      "src/main/java/com/orbe/reembolso/servico/ReembolsoService.java",
+      "src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java",
+      "src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java",
+      "src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java"
+    ],
+    "document": [],
+    "paper": [],
+    "image": [],
+    "video": []
+  },
+  "total_files": 24,
+  "total_words": 3914,
+  "needs_graph": false,
+  "warning": "Corpus is ~3.914 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 52,
+  "git": {
+    "source_owner": "git",
+    "source_hash": "03a28cb95e5c64cc80d808e39f424b64af7b2be1",
+    "branches": [
+      "gabarito",
+      "main"
+    ],
+    "max_commits": 200,
+    "active_within_days": 30
+  },
+  "scope": {
+    "requested_mode": "all",
+    "resolved_mode": "all",
+    "source": "configured-default",
+    "root": ".",
+    "git_root": ".",
+    "head": "03a28cb95e5c64cc80d808e39f424b64af7b2be1",
+    "candidate_count": null,
+    "included_count": 24,
+    "excluded_untracked_count": 0,
+    "excluded_ignored_count": 0,
+    "excluded_sensitive_count": 0,
+    "missing_committed_count": 0,
+    "warnings": [],
+    "recommendation": null
+  }
+}

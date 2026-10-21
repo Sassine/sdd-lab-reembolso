@@ -1,0 +1,98 @@
+{
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/mvnw": {
+    "mtime": 1792190334000,
+    "hash": "2fe09837c0b4dfabab4c4b206bcd0850"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/scripts/SddCheck.java": {
+    "mtime": 1792466219000,
+    "hash": "8b3fb5002138b8048cbe3c35b6c082e8"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/scripts/verify.ps1": {
+    "mtime": 1792466219000,
+    "hash": "93e727ff000e1ef988b6dae2d3d806fc"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/ReembolsoApplication.java": {
+    "mtime": 1792189939000,
+    "hash": "21133ed7a9230a2e438f82ed36a60736"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/api/DecisaoRequest.java": {
+    "mtime": 1792189988000,
+    "hash": "813277dff8a32a9be53bb23b227aa410"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/api/NovoReembolsoRequest.java": {
+    "mtime": 1792189987000,
+    "hash": "d2fd8ba7782a140a2d50f76143d52b1c"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/api/ReembolsoController.java": {
+    "mtime": 1792466221000,
+    "hash": "7de2d39cc9a1b42b98e5a67b09fcdaf4"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/api/ReembolsoResponse.java": {
+    "mtime": 1792466221000,
+    "hash": "5d7a769009e4a04b04ef3ce223b8f78b"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/api/TratadorDeErros.java": {
+    "mtime": 1792466221000,
+    "hash": "783126a8b3e8c8626b3b55eeeb0f1fc3"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/config/ClockConfig.java": {
+    "mtime": 1792189957000,
+    "hash": "5928f341b2e2f4c7c56750e47e11caad"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/Categoria.java": {
+    "mtime": 1792189943000,
+    "hash": "5c2e9388e1a796918b4b70a74d6b0eaa"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/RecursoNaoEncontradoException.java": {
+    "mtime": 1792189957000,
+    "hash": "42d02a3bba91f2fb8562b0b39395cb1e"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/Reembolso.java": {
+    "mtime": 1792466221000,
+    "hash": "21734a454250a01f6454b9f7d979eebf"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/ReembolsoDuplicadoException.java": {
+    "mtime": 1792189957000,
+    "hash": "3ebb14b1ced4897915845be74e1912f5"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/RegraDeNegocioException.java": {
+    "mtime": 1792189957000,
+    "hash": "c5c87967e36dde12a19276df9ad04cec"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/StatusReembolso.java": {
+    "mtime": 1792466221000,
+    "hash": "951bf5e7bce586a4e09bd5b0dd0e164e"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/dominio/TransicaoDeStatusInvalidaException.java": {
+    "mtime": 1792189957000,
+    "hash": "e60f98fb309015e94af4823f9b440c06"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/servico/NovoReembolso.java": {
+    "mtime": 1792189974000,
+    "hash": "2425e3606e94e368ecaa2591502d6310"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/servico/PoliticaDePrazo.java": {
+    "mtime": 1792466221000,
+    "hash": "daf306789cb6638edf92b2c9fc89eebf"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/servico/ReembolsoRepository.java": {
+    "mtime": 1792466221000,
+    "hash": "a3e49581ad400d639b744b89daad57af"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/main/java/com/orbe/reembolso/servico/ReembolsoService.java": {
+    "mtime": 1792466221000,
+    "hash": "40fb1f0f6242ef34e6c01c91a38cc37b"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/test/java/com/orbe/reembolso/api/ReembolsoApiTest.java": {
+    "mtime": 1792466221000,
+    "hash": "d9d6cdea8a00ba5e0e5d9448ce20521a"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/test/java/com/orbe/reembolso/servico/PoliticaDePrazoTest.java": {
+    "mtime": 1792466221000,
+    "hash": "0f6ba54d992110cde80dbf1565131081"
+  },
+  "c:/Users/Arabe/desenv/sdd-lab-reembolso/src/test/java/com/orbe/reembolso/suporte/RelogioDeTeste.java": {
+    "mtime": 1792190012000,
+    "hash": "e1651176546ee59531df1359eb0754cc"
+  }
+}

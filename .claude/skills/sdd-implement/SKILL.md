@@ -1,6 +1,7 @@
 ---
 name: sdd-implement
 description: Orquestra a implementação de uma spec tarefa por tarefa a partir de tasks.md, delegando cada tarefa ao agente implementador, validando com o agente revisor e com o gate de testes, marcando o checkbox, registrando o progress.md e fazendo commit. Use quando tasks.md estiver aprovado e alguém pedir para implementar, executar as tarefas ou continuar a implementação.
+model: gpt-6-luna
 ---
 
 # Implementar como orquestrador
