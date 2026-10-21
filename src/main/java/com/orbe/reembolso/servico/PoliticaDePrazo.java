@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 import com.orbe.reembolso.dominio.RegraDeNegocioException;
 
 /**
- * Política de Despesas, seção 2: prazo de submissão.
+ * Política de Despesas, seção 2: prazo de submissão. "Até 60 dias" inclui o 60º
+ * (o dia da despesa é o dia zero). Ver specs/003-prazo-60-dias.
  */
 @Component
 public class PoliticaDePrazo {
@@ -28,7 +29,7 @@ public class PoliticaDePrazo {
             throw new RegraDeNegocioException("A data da despesa não pode estar no futuro.");
         }
         long dias = ChronoUnit.DAYS.between(dataDespesa, hoje);
-        if (dias >= PRAZO_EM_DIAS) {
+        if (dias > PRAZO_EM_DIAS) {
             throw new RegraDeNegocioException(
                     "Prazo de submissão expirado: a política permite até %d dias após a despesa."
                             .formatted(PRAZO_EM_DIAS));

@@ -23,6 +23,12 @@ class PoliticaDePrazoTest {
         assertThatCode(() -> politica.validar(HOJE.minusDays(59))).doesNotThrowAnyException();
     }
 
+    /** Bugfix 003: "até 60 dias" inclui o 60º. 20/10/2026 − 60 dias = 21/08/2026. */
+    @Test
+    void aceitaDespesaDe60DiasAtras() {
+        assertThatCode(() -> politica.validar(HOJE.minusDays(60))).doesNotThrowAnyException();
+    }
+
     @Test
     void rejeitaDespesaDe61DiasAtras() {
         assertThatThrownBy(() -> politica.validar(HOJE.minusDays(61)))

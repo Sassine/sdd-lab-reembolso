@@ -36,6 +36,7 @@ reembolso em dobro da mesma nota e nenhum registro de quem aprovou.
 | CA1 | R1 | hoje 20/10/2026 | Ana submete refeição de R$ 85,50 de 17/10 | pedido criado, status SUBMETIDA, valor 85.50 |
 | CA2 | R2 | hoje 20/10/2026 | despesa de 21/10 | recusado, motivo cita "futuro" |
 | CA3 | R3 | hoje 20/10/2026 | despesa de 22/07 (90 dias) | recusado, motivo cita "Prazo" |
+| CA3b | R3 | hoje 20/10/2026 | despesa de 21/08 (exatamente 60 dias) | aceito *(acrescentado pelo bugfix 003: o limite exato não tinha critério)* |
 | CA4 | R4 | Ana já tem transporte R$ 42,00 de 19/10 no CNPJ X | mesma submissão de novo | recusado como duplicado, nada novo gravado |
 | CA5 | R5 | pedido SUBMETIDO | Bruno aprova | status APROVADA, decididoPor = Bruno |
 | CA6 | R6 | pedido já APROVADO | Carla tenta aprovar | recusado, pedido continua aprovado por Bruno |
