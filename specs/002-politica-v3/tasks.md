@@ -11,7 +11,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
 
 ## Fase 1 · Fundação
 
-- [ ] T001 [R9] Defina a vigência pelo instante capturado da submissão, preservando o prazo atual.
+- [x] T001 [R9] Defina a vigência pelo instante capturado da submissão, preservando o prazo atual.
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\VersaoPolitica.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeVigencia.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDePrazo.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeVigenciaTest.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDePrazoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

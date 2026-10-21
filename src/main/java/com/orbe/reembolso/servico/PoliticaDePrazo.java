@@ -6,6 +6,7 @@ import java.time.temporal.ChronoUnit;
 
 import org.springframework.stereotype.Component;
 
+import com.orbe.reembolso.config.ClockConfig;
 import com.orbe.reembolso.dominio.RegraDeNegocioException;
 
 /**
@@ -23,11 +24,15 @@ public class PoliticaDePrazo {
     }
 
     public void validar(LocalDate dataDespesa) {
-        LocalDate hoje = LocalDate.now(clock);
-        if (dataDespesa.isAfter(hoje)) {
+        validar(dataDespesa, LocalDate.now(clock.withZone(ClockConfig.FUSO_PADRAO)));
+    }
+
+    /** A referência é o dia em Brasília derivado da captura temporal do comando. */
+    public void validar(LocalDate dataDespesa, LocalDate dataReferencia) {
+        if (dataDespesa.isAfter(dataReferencia)) {
             throw new RegraDeNegocioException("A data da despesa não pode estar no futuro.");
         }
-        long dias = ChronoUnit.DAYS.between(dataDespesa, hoje);
+        long dias = ChronoUnit.DAYS.between(dataDespesa, dataReferencia);
         if (dias >= PRAZO_EM_DIAS) {
             throw new RegraDeNegocioException(
                     "Prazo de submissão expirado: a política permite até %d dias após a despesa."
