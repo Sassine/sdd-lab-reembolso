@@ -100,3 +100,14 @@
 - **Commit:** esta entrada integra `T006: validar rejeicao por etapa com motivo obrigatorio`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** registrar T007 e T008 já revisadas e verificadas; depois iniciar T009.
+
+## 2026-10-21 18:32 · T007 · concluída
+
+- **Objetivo da sessão:** implementar a validação monetária pura do teto diário de refeições.
+- **O que foi feito:** implementador em worktree exclusivo criou PoliticaDeRefeicao com submissão que soma total/valor proposto e aprovação que valida total já reservado; 9 testes de limites e acumulado. Revisão independente APROVADA.
+- **Decisões e porquê:** operações explícitas evitam dupla contagem na aprovação; BigDecimal e teto inclusivo de R$ 120,00, sem arredondamento ou dependências de banco/HTTP.
+- **Arquivos tocados:** `src\main\java\com\orbe\reembolso\servico\PoliticaDeRefeicao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeRefeicaoTest.java`, checkbox de `tasks.md` e este log.
+- **Verificação:** RED antes da classe e GREEN com 9 testes, relatados pelo implementador. Gate completo verde no worktree e no lote integrado verificado pelo orquestrador; diff sem problemas.
+- **Commit:** esta entrada integra `T007: validar teto diario de refeicoes sem dupla contagem`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** registrar T008 e iniciar a integração T009.

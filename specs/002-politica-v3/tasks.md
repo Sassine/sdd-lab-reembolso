@@ -37,7 +37,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeRejeicao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeRejeicaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T007 [P] [R1] Implemente a validação monetária do teto diário sem contar novamente a reserva aprovada.
+- [x] T007 [P] [R1] Implemente a validação monetária do teto diário sem contar novamente a reserva aprovada.
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeRefeicao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeRefeicaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
