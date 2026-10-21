@@ -54,3 +54,12 @@
 - **Verificação:** `./scripts/verify.sh` → 45 testes verdes, SDD-CHECK OK
 - **Revisor:** aprovado com ressalva: CA14 (concorrência) ainda sem teste, previsto na T007.
 - **Próximo passo concreto:** T007, teste com duas threads aprovando o mesmo pedido.
+
+## 2026-10-21 14:45 · T007 · concluída
+
+- **Objetivo da sessão:** provar o R7 (CA14).
+- **O que foi feito:** `ConcorrenciaAprovacaoTest`: duas threads com o mesmo ponto de largada aprovam o mesmo pedido; repetido 5 vezes.
+- **Decisões e porquê:** o teste aceita as duas formas de perder (`OptimisticLockingFailureException` se as duas leram antes da gravação, `TransicaoDeStatusInvalidaException` se uma leu depois). As asserções não dependem da ordem das threads, só de "exatamente uma vence" e de o pedido registrar o vencedor. Por isso o teste não é instável.
+- **Arquivos tocados:** `servico/ConcorrenciaAprovacaoTest.java`
+- **Verificação:** `./mvnw -q test -Dtest=ConcorrenciaAprovacaoTest` → 5 repetições verdes. Sem o `@Version` da T002 o teste falha: as duas aprovações "vencem" e o nome gravado é o da última, exatamente o caso do ticket.
+- **Próximo passo concreto:** T008, atualizar a spec 001.

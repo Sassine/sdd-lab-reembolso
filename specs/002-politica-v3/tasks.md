@@ -29,7 +29,7 @@
 - [x] T006 [R1,R2,R3,R4,R5,R6,R8] Serviço e API usam as políticas; aprovação exige papel
       Arquivos: `servico/ReembolsoService.java`, `api/AprovacaoRequest.java`, `api/ReembolsoController.java`, `api/ReembolsoResponse.java`, `dominio/Reembolso.java`, `api/ReembolsoApiTest.java`, `api/AprovacaoPorAlcadaApiTest.java`
       Verificação: `./scripts/verify.sh`
-- [ ] T007 [R7] Teste de duas aprovações simultâneas
+- [x] T007 [R7] Teste de duas aprovações simultâneas
       Arquivos: `servico/ConcorrenciaAprovacaoTest.java`
       Verificação: `./mvnw -q test -Dtest=ConcorrenciaAprovacaoTest`
 
