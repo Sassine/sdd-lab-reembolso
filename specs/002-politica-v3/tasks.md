@@ -63,7 +63,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoRepository.java`, `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T013 [R1,R3,R9] Comprove o corte exato de vigência com preservação dos pedidos legados.
+- [x] T013 [R1,R3,R9] Comprove o corte exato de vigência com preservação dos pedidos legados.
       Arquivos: `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeVigencia.java`, `src\main\java\com\orbe\reembolso\api\ReembolsoResponse.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoVigenciaApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

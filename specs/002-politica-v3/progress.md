@@ -166,3 +166,14 @@
 - **Commit:** esta entrada integra `T012: integrar reserva diaria de refeicoes sob lock`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T013 — comprovar corte de vigência e preservação dos pedidos legados.
+
+## 2026-10-21 19:08 · T013 · concluída
+
+- **Objetivo da sessão:** comprovar vigência exata e compatibilidade dos pedidos legados.
+- **O que foi feito:** implementador acrescentou 8 testes com Clock UTC contextual e fixtures v2 persistidas, cobrindo CA23–CA26, instante anterior, rejeição sem motivo, listagem, prazo e duplicidade. Revisão independente APROVADA.
+- **Decisões e porquê:** produção já atendeu aos cenários; mantida sem mudanças ou RED artificial. Relógio v2 global não alterado.
+- **Arquivos tocados:** `src\test\java\com\orbe\reembolso\api\ReembolsoVigenciaApiTest.java`, checkbox e este log.
+- **Verificação:** 8 testes focados verdes; gate completo verde pelo implementador e pelo orquestrador; diff limpo.
+- **Commit:** esta entrada integra `T013: comprovar vigencia e compatibilidade do legado`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T014 — comprovar exclusividade das decisões concorrentes v3 e v2.
