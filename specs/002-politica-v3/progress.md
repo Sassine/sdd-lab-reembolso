@@ -78,3 +78,14 @@
 - **Commit:** esta entrada integra `T004: centralizar autorizacao declarada por etapa`; consultar o hash com `git log --oneline --grep="^T004:"`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T005 — implementar a política de aprovação por alçada reutilizando a autorização declarada.
+
+## 2026-10-21 18:11 · T005 · concluída
+
+- **Objetivo da sessão:** implementar a política de aprovação v3 por alçada, reutilizando a autorização declarada.
+- **O que foi feito:** implementador criou PoliticaDeAprovacao para validar o limite de submissão de R$ 5.000,00, orientar adiantamento pelo processo de Viagens no excedente e selecionar a exigência de Financeiro acima de R$ 500,00. Aprovação delega a autorização à política existente da T004. Revisão independente APROVADA, sem bloqueantes.
+- **Decisões e porquê:** interface mínima com `validarSubmissao(BigDecimal)` e `validar(Reembolso, DecidirReembolso)` retornando `boolean exigeFinanceiro`, compatível com o agregado. Limites comparados com BigDecimal, sem reduzir ou arredondar valores; políticas não alteram pedido/histórico. Integração com serviço/API permanece para as tarefas seguintes, sem restringir o legado v2.
+- **Arquivos tocados:** `src\main\java\com\orbe\reembolso\servico\PoliticaDeAprovacao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeAprovacaoTest.java`, checkbox de `tasks.md` e este log.
+- **Verificação:** implementador registrou RED de compilação antes da criação da classe e GREEN com 15 testes focados, cobrindo limites, orientação a Viagens, delegação e preservação de estado/histórico. `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1` executado pelo implementador e independentemente pelo orquestrador → GATE VERDE, incluindo testes e SddCheck; `git diff --check` sem problemas.
+- **Commit:** esta entrada integra `T005: implementar politica de aprovacao por alcada`; consultar o hash com `git log --oneline --grep="^T005:"`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T006 — implementar a rejeição pela etapa atual com motivo não branco.

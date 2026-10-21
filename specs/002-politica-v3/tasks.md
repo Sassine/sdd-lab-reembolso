@@ -29,7 +29,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
 
 ## Fase 2 · Trabalho independente
 
-- [ ] T005 [P] [R2,R3,R4,R5] Implemente a política de aprovação por alçada reutilizando a autorização declarada.
+- [x] T005 [P] [R2,R3,R4,R5] Implemente a política de aprovação por alçada reutilizando a autorização declarada.
       Arquivos: `src\main\java\com\orbe\reembolso\servico\PoliticaDeAprovacao.java`, `src\test\java\com\orbe\reembolso\servico\PoliticaDeAprovacaoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
