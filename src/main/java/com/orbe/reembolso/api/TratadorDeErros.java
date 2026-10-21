@@ -6,6 +6,8 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
+import org.springframework.dao.OptimisticLockingFailureException;
+import org.springframework.dao.PessimisticLockingFailureException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -14,6 +16,10 @@ import com.orbe.reembolso.dominio.RecursoNaoEncontradoException;
 import com.orbe.reembolso.dominio.ReembolsoDuplicadoException;
 import com.orbe.reembolso.dominio.RegraDeNegocioException;
 import com.orbe.reembolso.dominio.TransicaoDeStatusInvalidaException;
+
+import jakarta.persistence.LockTimeoutException;
+import jakarta.persistence.OptimisticLockException;
+import jakarta.persistence.PessimisticLockException;
 
 /** Todo erro sai como Problem Details (RFC 9457). Constitution, art. 4. */
 @RestControllerAdvice
@@ -34,6 +40,13 @@ public class TratadorDeErros {
     @ExceptionHandler(TransicaoDeStatusInvalidaException.class)
     ProblemDetail transicao(TransicaoDeStatusInvalidaException e) {
         return problema(HttpStatus.CONFLICT, "Transição de status inválida", e.getMessage());
+    }
+
+    @ExceptionHandler({OptimisticLockingFailureException.class, PessimisticLockingFailureException.class,
+            OptimisticLockException.class, PessimisticLockException.class, LockTimeoutException.class})
+    ProblemDetail concorrencia(Exception e) {
+        return problema(HttpStatus.CONFLICT, "Conflito de concorrência",
+                "Outra operação disputou este pedido. Consulte o estado atual antes de decidir novamente.");
     }
 
     @ExceptionHandler(RecursoNaoEncontradoException.class)

@@ -105,20 +105,35 @@ public class Reembolso {
      */
     public void aprovar(EtapaAprovacao etapa, String responsavel, LocalDateTime quando,
                         boolean exigeFinanceiro) {
+        aprovar(etapa, responsavel, quando, exigeFinanceiro, () -> {});
+    }
+
+    /** Permite validar a escrita do estado antes de acrescentar o evento, na mesma unidade de trabalho. */
+    public void aprovar(EtapaAprovacao etapa, String responsavel, LocalDateTime quando,
+                        boolean exigeFinanceiro, Runnable antesDoHistorico) {
         exigirEtapa(etapa, "aprovar na etapa " + etapa);
         this.status = etapa == EtapaAprovacao.GESTOR && exigeFinanceiro
                 ? StatusReembolso.AGUARDANDO_FINANCEIRO : StatusReembolso.APROVADA;
-        registrarDecisao(etapa, StatusReembolso.APROVADA, responsavel, null, quando);
+        registrarDecisao(responsavel, null, quando);
+        antesDoHistorico.run();
+        adicionarAoHistorico(etapa, StatusReembolso.APROVADA, responsavel, null, quando);
     }
 
     /** Aceita uma rejeição cuja autorização e motivo já foram validados pelas políticas. */
     public void rejeitar(EtapaAprovacao etapa, String responsavel, String motivo, LocalDateTime quando) {
-        exigirEtapa(etapa, "rejeitar na etapa " + etapa);
-        this.status = StatusReembolso.REJEITADA;
-        registrarDecisao(etapa, StatusReembolso.REJEITADA, responsavel, motivo, quando);
+        rejeitar(etapa, responsavel, motivo, quando, () -> {});
     }
 
-    private void exigirEtapa(EtapaAprovacao etapa, String operacao) {
+    public void rejeitar(EtapaAprovacao etapa, String responsavel, String motivo, LocalDateTime quando,
+                         Runnable antesDoHistorico) {
+        exigirEtapa(etapa, "rejeitar na etapa " + etapa);
+        this.status = StatusReembolso.REJEITADA;
+        registrarDecisao(responsavel, motivo, quando);
+        antesDoHistorico.run();
+        adicionarAoHistorico(etapa, StatusReembolso.REJEITADA, responsavel, motivo, quando);
+    }
+
+    public void exigirEtapa(EtapaAprovacao etapa, String operacao) {
         boolean etapaAtual = (etapa == EtapaAprovacao.GESTOR && status == StatusReembolso.SUBMETIDA)
                 || (etapa == EtapaAprovacao.FINANCEIRO && status == StatusReembolso.AGUARDANDO_FINANCEIRO);
         if (!etapaAtual) {
@@ -138,11 +153,10 @@ public class Reembolso {
         this.decididoEm = quando;
     }
 
-    private void registrarDecisao(EtapaAprovacao etapa, StatusReembolso resultado, String responsavel,
-                                 String motivo, LocalDateTime quando) {
+    private void adicionarAoHistorico(EtapaAprovacao etapa, StatusReembolso resultado, String responsavel,
+                                     String motivo, LocalDateTime quando) {
         historico.add(new DecisaoReembolso(this, historico.size() + 1, etapa, resultado,
                 responsavel, quando, motivo));
-        registrarDecisao(responsavel, motivo, quando);
     }
 
     public Long getId() { return id; }

@@ -69,7 +69,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
 
 ## Fase 4 · Acabamento
 
-- [ ] T014 [R3,R6,R7,R8,R9] Comprove a exclusividade de decisões concorrentes nas etapas v3 e na decisão única v2.
+- [x] T014 [R3,R6,R7,R8,R9] Comprove a exclusividade de decisões concorrentes nas etapas v3 e na decisão única v2.
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\api\TratadorDeErros.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoConcorrenciaTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

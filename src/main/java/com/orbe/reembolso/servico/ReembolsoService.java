@@ -93,7 +93,7 @@ public class ReembolsoService {
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public Reembolso aprovar(Long id, DecidirReembolso comando) {
         LocalDateTime quando = agora();
-        Reembolso reembolso = buscarParaDecidir(id);
+        Reembolso reembolso = buscarParaDecidir(id, comando);
         if (politicaDe(reembolso) == VersaoPolitica.V2) {
             reembolso.aprovar(comando.responsavel(), quando);
         } else {
@@ -101,7 +101,10 @@ public class ReembolsoService {
             if (reembolso.getCategoria() == Categoria.REFEICAO) {
                 politicaDeRefeicao.validarAprovacao(totalReservado(chaveDe(reembolso)));
             }
-            reembolso.aprovar(comando.etapa(), comando.responsavel(), quando, exigeFinanceiro);
+            // Atualizar a versão antes do INSERT IDENTITY do histórico evita que a
+            // unicidade do evento mascare o conflito otimista. O rollback abrange ambos.
+            reembolso.aprovar(comando.etapa(), comando.responsavel(), quando, exigeFinanceiro,
+                    entityManager::flush);
         }
         return repositorio.saveAndFlush(reembolso);
     }
@@ -109,12 +112,13 @@ public class ReembolsoService {
     @Transactional(isolation = Isolation.READ_COMMITTED)
     public Reembolso rejeitar(Long id, DecidirReembolso comando) {
         LocalDateTime quando = agora();
-        Reembolso reembolso = buscarParaDecidir(id);
+        Reembolso reembolso = buscarParaDecidir(id, comando);
         if (politicaDe(reembolso) == VersaoPolitica.V2) {
             reembolso.rejeitar(comando.responsavel(), comando.motivo(), quando);
         } else {
             politicaDeRejeicao.validar(reembolso, comando);
-            reembolso.rejeitar(comando.etapa(), comando.responsavel(), comando.motivo(), quando);
+            reembolso.rejeitar(comando.etapa(), comando.responsavel(), comando.motivo(), quando,
+                    entityManager::flush);
         }
         return repositorio.saveAndFlush(reembolso);
     }
@@ -134,17 +138,27 @@ public class ReembolsoService {
         return politicaDeVigencia.classificar(reembolso.getSubmetidoEm());
     }
 
-    private Reembolso buscarParaDecidir(Long id) {
+    private Reembolso buscarParaDecidir(Long id, DecidirReembolso comando) {
         Reembolso inicial = buscar(id);
+        validarEtapaRequerida(inicial, comando);
         if (politicaDe(inicial) != VersaoPolitica.V3 || inicial.getCategoria() != Categoria.REFEICAO) {
             return inicial;
         }
-        // A leitura inicial apenas descobre a chave, sem autorizar ou modificar o pedido.
+        // A leitura inicial valida a etapa explícita e descobre a chave, sem autorizar ou modificar.
         bloquearDia(chaveDe(inicial));
         // Não há escritas pendentes. Descartar também histórico/versão do primeiro nível
         // força a releitura após a espera. O clear não libera o lock transacional da âncora.
         entityManager.clear();
-        return buscar(id);
+        Reembolso atual = buscar(id);
+        validarEtapaRequerida(atual, comando);
+        return atual;
+    }
+
+    private void validarEtapaRequerida(Reembolso reembolso, DecidirReembolso comando) {
+        // Ausência de etapa continua sendo erro contextual da política v3, não transição.
+        if (politicaDe(reembolso) == VersaoPolitica.V3 && comando.etapa() != null) {
+            reembolso.exigirEtapa(comando.etapa(), "decidir na etapa " + comando.etapa());
+        }
     }
 
     private void bloquearDia(ChaveDiaRefeicao chave) {

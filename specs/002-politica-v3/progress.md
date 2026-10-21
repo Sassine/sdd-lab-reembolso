@@ -177,3 +177,14 @@
 - **Commit:** esta entrada integra `T013: comprovar vigencia e compatibilidade do legado`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T014 — comprovar exclusividade das decisões concorrentes v3 e v2.
+
+## 2026-10-21 19:24 · T014 · concluída
+
+- **Objetivo da sessão:** comprovar uma única decisão aceita nas corridas por etapa e no legado.
+- **O que foi feito:** implementador acrescentou testes concorrentes com transações independentes e sincronização com timeout; mapeou conflitos específicos para Problem Details 409 e corrigiu a ordem de gravação v3. Revisão final APROVADA após uma correção da prova de autoria.
+- **Decisões e porquê:** RED real mostrou colisão na unicidade do evento IDENTITY antes da atualização versionada. Callback sem dependência de infraestrutura permite flush do pedido versionado antes do evento, na mesma transação, sem retry ou captura genérica SQL. Etapa também é checada antes do lock e após releitura. Testes distinguem autores declarados concorrentes e comparam requisição vencedora, resposta e consulta nova; CA14 original preservado.
+- **Arquivos tocados:** `Reembolso.java`, `ReembolsoService.java`, `TratadorDeErros.java`, `ReembolsoConcorrenciaTest.java`, nos caminhos de T014, checkbox e este log.
+- **Verificação:** RED de conflitos reais e de etapa antes do lock; GREEN com 14 testes concorrentes após correção. Gate completo verde por implementador e orquestrador; diff limpo. Sem evento órfão e sem história v2 fabricada.
+- **Commit:** esta entrada integra `T014: proteger decisoes concorrentes e preservar vencedor`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T015 — comprovar reserva concorrente de refeições inclusive no primeiro pedido do dia.
