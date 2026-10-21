@@ -19,7 +19,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\main\java\com\orbe\reembolso\dominio\StatusReembolso.java`, `src\main\java\com\orbe\reembolso\dominio\EtapaAprovacao.java`, `src\main\java\com\orbe\reembolso\dominio\PapelDeclarado.java`, `src\main\java\com\orbe\reembolso\dominio\DecisaoReembolso.java`, `src\main\java\com\orbe\reembolso\servico\DecidirReembolso.java`, `src\test\java\com\orbe\reembolso\dominio\ReembolsoTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T003 [R6,R8,R9] Persista o histórico ordenado sob controle otimista de versão do pedido.
+- [x] T003 [R6,R8,R9] Persista o histórico ordenado sob controle otimista de versão do pedido.
       Arquivos: `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\main\java\com\orbe\reembolso\dominio\DecisaoReembolso.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoRepository.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoPersistenciaTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 

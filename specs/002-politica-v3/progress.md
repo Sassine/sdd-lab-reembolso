@@ -56,3 +56,14 @@
 - **Commit:** esta entrada integra `T002: modelar transicoes por etapa e historico de decisoes`; consultar o hash com `git log --oneline --grep="^T002:"`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T003 — persistir o histórico ordenado sob controle otimista de versão do pedido.
+
+## 2026-10-21 17:44 · T003 · concluída
+
+- **Objetivo da sessão:** persistir o histórico ordenado de decisões aceitas e proteger o agregado com versão otimista, preservando o legado.
+- **O que foi feito:** implementador mapeou DecisaoReembolso como entidade JPA com FK obrigatória e unicidade de pedido/ordem, histórico ordenado em cascata, versão do pedido e índice para consulta futura de teto. Busca por id e listagem carregam o histórico com EntityGraph. Acrescentados 10 testes H2 de leitura desconectada, ordenação, rollback conjunto, legado sem eventos inventados, conflito de versão v2/v3 e limpeza em cascata.
+- **Decisões e porquê:** construtor protegido e campos internos não finais permitem persistência JPA, mantendo ausência de mutadores públicos. Ordem de aceitação é independente dos horários. Sem dependências novas, migração durável ou integração antecipada das tarefas seguintes.
+- **Arquivos tocados:** `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\main\java\com\orbe\reembolso\dominio\DecisaoReembolso.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoRepository.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoPersistenciaTest.java`, checkbox de `tasks.md` e este log.
+- **Verificação:** implementador registrou RED inicial do novo teste antes do mapeamento e GREEN final com 10 testes. Revisão independente apontou lacuna na prova de ordenação; na única rodada de correção, os testes de busca/listagem passaram a aceitar decisões com horários inversos à sequência. Implementador relatou duas falhas ao simular ordenação incorreta por momento, com a simulação removida em seguida. Revisão final APROVADA. `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1` executado novamente pelo orquestrador após a correção → GATE VERDE; `git diff --check` sem problemas.
+- **Commit:** esta entrada integra `T003: persistir historico com controle otimista de versao`; consultar o hash com `git log --oneline --grep="^T003:"`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T004 — centralizar a autorização declarada por etapa sem autenticação real ou substituição automática.

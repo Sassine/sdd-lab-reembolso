@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -13,16 +14,24 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Index;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.Version;
 
 @Entity
-@Table(name = "reembolso")
+@Table(name = "reembolso", indexes = @Index(name = "idx_reembolso_colaborador_data_categoria",
+        columnList = "colaborador, data_despesa, categoria"))
 public class Reembolso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Version
+    @Column(nullable = false)
+    private Long versao;
 
     @Column(nullable = false, length = 80)
     private String colaborador;
@@ -47,7 +56,7 @@ public class Reembolso {
     @Column(nullable = false, length = 30)
     private StatusReembolso status;
 
-    @Column(nullable = false)
+    @Column(nullable = false, updatable = false)
     private LocalDateTime submetidoEm;
 
     @Column(length = 80)
@@ -58,8 +67,9 @@ public class Reembolso {
 
     private LocalDateTime decididoEm;
 
-    @Transient
-    private final List<DecisaoReembolso> historico = new ArrayList<>();
+    @OneToMany(mappedBy = "reembolso", cascade = CascadeType.ALL)
+    @OrderBy("ordem ASC")
+    private List<DecisaoReembolso> historico = new ArrayList<>();
 
     protected Reembolso() {
         // exigido pelo JPA
@@ -130,7 +140,7 @@ public class Reembolso {
 
     private void registrarDecisao(EtapaAprovacao etapa, StatusReembolso resultado, String responsavel,
                                  String motivo, LocalDateTime quando) {
-        historico.add(new DecisaoReembolso(historico.size() + 1, etapa, resultado,
+        historico.add(new DecisaoReembolso(this, historico.size() + 1, etapa, resultado,
                 responsavel, quando, motivo));
         registrarDecisao(responsavel, motivo, quando);
     }
