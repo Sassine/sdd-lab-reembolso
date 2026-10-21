@@ -155,3 +155,14 @@
 - **Commit:** esta entrada integra `T011: integrar rejeicao v3 preservando historico`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T012 — integrar reserva diária de refeições sob bloqueio persistente.
+
+## 2026-10-21 19:01 · T012 · concluída
+
+- **Objetivo da sessão:** integrar reserva diária de refeições sem exceder o teto ou duplicar consumo.
+- **O que foi feito:** implementador integrou soma v3 dos estados consumidores, âncora e políticas na submissão/aprovação/rejeição; 8 testes adicionais cobrem CA1/CA2/CA16–CA19 e exclusões por categoria/regime. Revisão independente APROVADA.
+- **Decisões e porquê:** READ_COMMITTED, garantia REQUIRES_NEW antes de qualquer escrita/lock externo, âncora na transação de negócio; clear e releitura após lock descartam estado prévio e políticas revalidam a etapa. Reserva é o pedido; rejeição libera consumo, não duplicidade.
+- **Arquivos tocados:** `ReembolsoService.java`, `ReembolsoRepository.java`, `ReembolsoPoliticaV3ApiTest.java`, nos caminhos de T012, checkbox e este log.
+- **Verificação:** RED com 7 falhas antes do wiring; GREEN com 34 testes API. Gate completo verde pelo implementador e pelo orquestrador; diff limpo.
+- **Commit:** esta entrada integra `T012: integrar reserva diaria de refeicoes sob lock`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T013 — comprovar corte de vigência e preservação dos pedidos legados.

@@ -53,6 +53,226 @@ class ReembolsoPoliticaV3ApiTest {
     }
 
     @Test
+    void aceitaRefeicaoNoTeto() throws Exception {
+        long id = submeterRefeicao("120.00", "11222333000181");
+
+        verificarAguardandoGestor(id);
+        consultar(id).andExpect(jsonPath("$.valor")
+                .value(comparesEqualTo(new BigDecimal("120.00")), BigDecimal.class));
+        recusarRefeicaoPorTeto("0.01", "11222333000182");
+        assertThat(repositorio.count()).isEqualTo(1);
+        verificarAguardandoGestor(id);
+    }
+
+    @Test
+    void recusaRefeicaoAcimaDoTeto() throws Exception {
+        recusarRefeicaoPorTeto("120.01", "11222333000181");
+
+        mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(0)));
+        assertThat(repositorio.count()).isZero();
+        submeterRefeicao("120.00", "11222333000182");
+        assertThat(repositorio.count()).isEqualTo(1);
+    }
+
+    @Test
+    void somaPendentesEAprovadasSemContarDuasVezes() throws Exception {
+        long pendente = submeterRefeicao("50.00", "11222333000181");
+        long aprovado = submeterRefeicao("30.00", "11222333000182");
+        aprovar(aprovado, "GESTOR", "bruno").andExpect(status().isOk());
+        long ultimo = submeterRefeicao("40.00", "11222333000183");
+
+        aprovar(ultimo, "GESTOR", "bruno")
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.status").value("APROVADA"));
+        recusarRefeicaoPorTeto("0.01", "11222333000184");
+
+        verificarAguardandoGestor(pendente);
+        for (long id : new long[] {aprovado, ultimo}) {
+            consultar(id)
+                    .andExpect(jsonPath("$.status").value("APROVADA"))
+                    .andExpect(jsonPath("$.historico", hasSize(1)))
+                    .andExpect(jsonPath("$.historico[0].etapa").value("GESTOR"))
+                    .andExpect(jsonPath("$.historico[0].resultado").value("APROVADA"))
+                    .andExpect(jsonPath("$.historico[0].responsavel").value("bruno"));
+        }
+        assertThat(repositorio.count()).isEqualTo(3);
+    }
+
+    @Test
+    void recusaExcedenteSomadoSemAlterarAnterior() throws Exception {
+        long id = submeterRefeicao("80.00", "11222333000181");
+        Object antes = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
+
+        recusarRefeicaoPorTeto("40.01", "11222333000182");
+
+        Object depois = JsonPath.read(consultar(id).andReturn().getResponse().getContentAsString(), "$");
+        assertThat(depois).isEqualTo(antes);
+        mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(1)))
+                .andExpect(jsonPath("$[0].id").value(id))
+                .andExpect(jsonPath("$[0].valor")
+                        .value(comparesEqualTo(new BigDecimal("80.00")), BigDecimal.class))
+                .andExpect(jsonPath("$[0].status").value("SUBMETIDA"))
+                .andExpect(jsonPath("$[0].historico", hasSize(0)));
+        assertThat(repositorio.count()).isEqualTo(1);
+        submeterRefeicao("40.00", "11222333000183");
+    }
+
+    @Test
+    void rejeicaoLiberaTetoSemLiberarDuplicidade() throws Exception {
+        long rejeitado = submeterRefeicao("80.00", "11222333000181");
+        recusarRejeicaoSemAlterar(rejeitado, declaracaoRejeicao("GESTOR", "bruno", "   "),
+                422, "motivo");
+        recusarRefeicaoPorTeto("120.00", "11222333000182");
+        verificarAguardandoGestor(rejeitado);
+
+        rejeitarDeclaracao(rejeitado, declaracaoRejeicao("GESTOR", "bruno", "Despesa particular"))
+                .andExpect(status().isOk());
+        verificarRejeicao(rejeitado, "GESTOR", "bruno", "2026-11-03T10:00:00",
+                "Despesa particular", 1);
+
+        // O rejeitado ainda impede duplicidade, inclusive com categoria diferente.
+        for (String categoria : new String[] {"REFEICAO", "TRANSPORTE"}) {
+            enviar(categoria, "80.00")
+                    .andExpect(status().isConflict())
+                    .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
+                    .andExpect(jsonPath("$.status").value(409));
+        }
+        assertThat(repositorio.count()).isEqualTo(1);
+        long novo = submeterRefeicao("120.00", "11222333000182");
+        verificarAguardandoGestor(novo);
+        recusarSemAlterar(rejeitado, declaracaoGestor(), 409, "REJEITADA");
+        verificarRejeicao(rejeitado, "GESTOR", "bruno", "2026-11-03T10:00:00",
+                "Despesa particular", 1);
+        mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].id").value(novo))
+                .andExpect(jsonPath("$[1].id").value(rejeitado))
+                .andExpect(jsonPath("$[1].historico", hasSize(1)));
+        assertThat(repositorio.count()).isEqualTo(2);
+    }
+
+    @Test
+    void separaTetoPorColaboradorEData() throws Exception {
+        long original = submeterRefeicao("120.00", "11222333000181");
+        ResultActions outroColaborador = enviarRefeicao("bia", "120.00", "2026-11-02", "11222333000181")
+                .andExpect(status().isCreated());
+        long outroId = ((Number) JsonPath.read(outroColaborador.andReturn().getResponse()
+                .getContentAsString(), "$.id")).longValue();
+        ResultActions outraData = enviarRefeicao("ana", "120.00", "2026-11-03", "11222333000181")
+                .andExpect(status().isCreated());
+        long outraDataId = ((Number) JsonPath.read(outraData.andReturn().getResponse()
+                .getContentAsString(), "$.id")).longValue();
+
+        recusarRefeicaoPorTeto("0.01", "11222333000182");
+        consultar(outroId)
+                .andExpect(jsonPath("$.colaborador").value("bia"))
+                .andExpect(jsonPath("$.dataDespesa").value("2026-11-02"))
+                .andExpect(jsonPath("$.valor").value(120.00))
+                .andExpect(jsonPath("$.status").value("SUBMETIDA"));
+        consultar(outraDataId)
+                .andExpect(jsonPath("$.colaborador").value("ana"))
+                .andExpect(jsonPath("$.dataDespesa").value("2026-11-03"))
+                .andExpect(jsonPath("$.valor").value(120.00))
+                .andExpect(jsonPath("$.status").value("SUBMETIDA"));
+        verificarAguardandoGestor(original);
+        mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$", hasSize(2)))
+                .andExpect(jsonPath("$[0].id").value(outraDataId))
+                .andExpect(jsonPath("$[1].id").value(original));
+        assertThat(repositorio.count()).isEqualTo(3);
+    }
+
+    @Test
+    void outrasCategoriasNaoConsomemTetoDeRefeicao() throws Exception {
+        submeter("TRANSPORTE", "120.00");
+        submeter("HOSPEDAGEM", "120.01");
+        submeter("OUTROS", "120.02");
+        long refeicao = submeterRefeicao("120.00", "11222333000182");
+
+        recusarRefeicaoPorTeto("0.01", "11222333000183");
+        verificarAguardandoGestor(refeicao);
+        assertThat(repositorio.count()).isEqualTo(4);
+    }
+
+    @Test
+    void refeicaoV2NaoConsomeTetoV3() throws Exception {
+        agora(LocalDateTime.of(2026, 10, 31, 10, 0));
+        ResultActions legado = enviarRefeicao("ana", "100.00", "2026-10-30", "11222333000181")
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.politica").value("V2"));
+        long idLegado = ((Number) JsonPath.read(legado.andReturn().getResponse()
+                .getContentAsString(), "$.id")).longValue();
+        agora(RelogioPoliticaV3DeTeste.AGORA);
+
+        ResultActions novo = enviarRefeicao("ana", "120.00", "2026-10-30", "11222333000182")
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.politica").value("V3"));
+        long idNovo = ((Number) JsonPath.read(novo.andReturn().getResponse()
+                .getContentAsString(), "$.id")).longValue();
+
+        aprovar(idNovo, "GESTOR", "bruno").andExpect(status().isOk());
+        consultar(idNovo)
+                .andExpect(jsonPath("$.status").value("APROVADA"))
+                .andExpect(jsonPath("$.valor").value(120.00))
+                .andExpect(jsonPath("$.historico", hasSize(1)));
+        consultar(idLegado)
+                .andExpect(jsonPath("$.status").value("SUBMETIDA"))
+                .andExpect(jsonPath("$.politica").value("V2"))
+                .andExpect(jsonPath("$.valor").value(100.00))
+                .andExpect(jsonPath("$.historico", hasSize(0)));
+        assertThat(repositorio.count()).isEqualTo(2);
+    }
+
+    private long submeterRefeicao(String valor, String cnpj) throws Exception {
+        ResultActions resultado = enviarRefeicao("ana", valor, "2026-11-02", cnpj)
+                .andExpect(status().isCreated())
+                .andExpect(header().exists("Location"))
+                .andExpect(jsonPath("$.status").value("SUBMETIDA"))
+                .andExpect(jsonPath("$.politica").value("V3"))
+                .andExpect(jsonPath("$.valor").value(comparesEqualTo(new BigDecimal(valor)), BigDecimal.class))
+                .andExpect(jsonPath("$.historico", hasSize(0)));
+        long id = ((Number) JsonPath.read(resultado.andReturn().getResponse()
+                .getContentAsString(), "$.id")).longValue();
+        resultado.andExpect(header().string("Location", "/reembolsos/" + id));
+        consultar(id)
+                .andExpect(jsonPath("$.valor").value(comparesEqualTo(new BigDecimal(valor)), BigDecimal.class));
+        return id;
+    }
+
+    private void recusarRefeicaoPorTeto(String valor, String cnpj) throws Exception {
+        Object antes = JsonPath.read(mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(), "$");
+        long quantidadeAntes = repositorio.count();
+
+        enviarRefeicao("ana", valor, "2026-11-02", cnpj)
+                .andExpect(status().isUnprocessableEntity())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_PROBLEM_JSON))
+                .andExpect(jsonPath("$.status").value(422))
+                .andExpect(jsonPath("$.detail").value(containsString("120,00")));
+
+        Object depois = JsonPath.read(mvc.perform(get("/reembolsos").param("colaborador", "ana"))
+                .andExpect(status().isOk()).andReturn().getResponse().getContentAsString(), "$");
+        assertThat(depois).as("Recusa integral não cria pedido nem altera reservas ou decisões").isEqualTo(antes);
+        assertThat(repositorio.count()).isEqualTo(quantidadeAntes);
+    }
+
+    private ResultActions enviarRefeicao(String colaborador, String valor, String data, String cnpj)
+            throws Exception {
+        return mvc.perform(post("/reembolsos")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("""
+                        {"colaborador":"%s","categoria":"REFEICAO","valor":%s,
+                         "dataDespesa":"%s","cnpjFornecedor":"%s"}
+                        """.formatted(colaborador, valor, data, cnpj)));
+    }
+
+    @Test
     void aprova500SomenteComGestor() throws Exception {
         long id = submeter("TRANSPORTE", "500.00");
 

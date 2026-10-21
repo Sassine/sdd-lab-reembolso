@@ -59,7 +59,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\api\ReembolsoController.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\PoliticaDeRejeicao.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T012 [R1,R7] Integre a reserva de refeições por colaborador/data sob bloqueio da âncora diária.
+- [x] T012 [R1,R7] Integre a reserva de refeições por colaborador/data sob bloqueio da âncora diária.
       Arquivos: `src\main\java\com\orbe\reembolso\servico\ReembolsoService.java`, `src\main\java\com\orbe\reembolso\servico\ReembolsoRepository.java`, `src\main\java\com\orbe\reembolso\dominio\Reembolso.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
