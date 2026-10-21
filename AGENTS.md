@@ -14,7 +14,7 @@ Regras de negócio: `docs/politica-de-despesas.md`. Regras de engenharia: `sdd/c
 |---|---|---|
 | Testes | `./mvnw -q test` | `mvnw.cmd -q test` |
 | Um teste | `./mvnw -q test -Dtest=NomeDoTeste` | `mvnw.cmd -q test -Dtest=NomeDoTeste` |
-| Gate completo | `./scripts/verify.sh` | `.\scripts\verify.ps1` |
+| Gate completo | `./scripts/verify.sh` | `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1` |
 | Checar artefatos SDD | `java scripts/SddCheck.java` | `java scripts\SddCheck.java` |
 | Próxima tarefa | `java scripts/SddCheck.java --proxima specs/<pasta>` | idem |
 
