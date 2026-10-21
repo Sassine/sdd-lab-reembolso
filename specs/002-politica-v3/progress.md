@@ -210,3 +210,14 @@
 - **Commit:** esta entrada integra `T016: uniformizar erros v3 em Problem Details`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T017 — contextualizar a spec 001 como contrato legado v2.
+
+## 2026-10-21 19:41 · T017 · concluída
+
+- **Objetivo da sessão:** finalizar a documentação do contrato legado e concluir a spec 002.
+- **O que foi feito:** implementador contextualizou R5/R6, CA5/CA6 e alçada fora do escopo da entrega 001 como regras v2, referenciando a 002 e preservando IDs, resultados e decisões históricas. Revisão independente APROVADA.
+- **Decisões e porquê:** explicitados corte de vigência, decisão única e motivo opcional do legado, valores acima de R$ 5.000,00 anteriores à vigência, ausência de etapas retroativas e concorrência protegida nas duas versões. Prazo de 60 dias segue fora da correção.
+- **Arquivos tocados:** `specs\001-reembolso-basico\spec.md`, checkbox de T017 e este log.
+- **Verificação:** gate completo verde pelo implementador e pelo orquestrador, com 209 testes reportados sem falhas/erros/ignorados e SddCheck OK; diff limpo. Nenhum teste novo para documentação.
+- **Commit:** esta entrada integra `T017: documentar contrato legado v2 e concluir politica v3`.
+- **Bloqueios / dúvidas:** nenhum. As 17 tarefas da spec estão concluídas; laboratório mantém autorização declarada, H2 em memória e divergência do 60º dia conforme decisões aprovadas.
+- **Próximo passo concreto:** revisão humana dos commits e publicação do repositório quando desejado; nenhum push automático realizado.

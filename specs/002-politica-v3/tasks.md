@@ -81,7 +81,7 @@ As verificações usam somente o gate completo por tarefa: ele já executa todos
       Arquivos: `src\main\java\com\orbe\reembolso\api\TratadorDeErros.java`, `src\main\java\com\orbe\reembolso\api\DecisaoRequest.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoPoliticaV3ApiTest.java`, `src\test\java\com\orbe\reembolso\api\ReembolsoVigenciaApiTest.java`, `src\test\java\com\orbe\reembolso\servico\ReembolsoConcorrenciaTest.java`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
-- [ ] T017 [R6,R9] Contextualize a spec 001 como contrato legado v2 com referência à política v3.
+- [x] T017 [R6,R9] Contextualize a spec 001 como contrato legado v2 com referência à política v3.
       Arquivos: `specs\001-reembolso-basico\spec.md`
       Verificação: `powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify.ps1`
 
