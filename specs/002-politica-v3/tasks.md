@@ -5,7 +5,7 @@
 
 ## Fase 1 · Fundação
 
-- [ ] T001 [R2,R4,R8] Novo status, papel de aprovador e transições na entidade
+- [x] T001 [R2,R4,R8] Novo status, papel de aprovador e transições na entidade
       Arquivos: `dominio/StatusReembolso.java`, `dominio/PapelAprovador.java`, `dominio/Reembolso.java`, `dominio/ReembolsoTransicoesTest.java`
       Verificação: `./mvnw -q test -Dtest=ReembolsoTransicoesTest`
 - [ ] T002 [R7] Versão otimista na entidade e 409 para conflito de concorrência

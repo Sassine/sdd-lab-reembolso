@@ -55,6 +55,12 @@ public class Reembolso {
 
     private LocalDateTime decididoEm;
 
+    @Column(length = 80)
+    private String aprovadorGestor;
+
+    @Column(length = 80)
+    private String aprovadorFinanceiro;
+
     protected Reembolso() {
         // exigido pelo JPA
     }
@@ -71,22 +77,51 @@ public class Reembolso {
         this.status = StatusReembolso.SUBMETIDA;
     }
 
-    public void aprovar(String responsavel, LocalDateTime quando) {
-        exigirStatus(StatusReembolso.SUBMETIDA, "aprovar");
-        this.status = StatusReembolso.APROVADA;
-        registrarDecisao(responsavel, null, quando);
+    /**
+     * Aprovação em dois níveis (spec 002, R1, R2, R4). Quem decide se o Financeiro
+     * é exigido é a PoliticaDeAlcada; a entidade só garante a ordem das transições.
+     */
+    public void aprovar(String responsavel, PapelAprovador papel, boolean exigeFinanceiro, LocalDateTime quando) {
+        switch (papel) {
+            case GESTOR -> {
+                exigirStatus("aprovar como gestor", StatusReembolso.SUBMETIDA);
+                this.aprovadorGestor = responsavel;
+                if (exigeFinanceiro) {
+                    this.status = StatusReembolso.AGUARDANDO_FINANCEIRO;
+                } else {
+                    this.status = StatusReembolso.APROVADA;
+                    registrarDecisao(responsavel, null, quando);
+                }
+            }
+            case FINANCEIRO -> {
+                exigirStatus("aprovar como financeiro", StatusReembolso.AGUARDANDO_FINANCEIRO);
+                this.aprovadorFinanceiro = responsavel;
+                this.status = StatusReembolso.APROVADA;
+                registrarDecisao(responsavel, null, quando);
+            }
+        }
     }
 
+    /** @deprecated substituído pela aprovação com papel (spec 002). Removido na T006. */
+    @Deprecated
+    public void aprovar(String responsavel, LocalDateTime quando) {
+        aprovar(responsavel, PapelAprovador.GESTOR, false, quando);
+    }
+
+    /** Spec 002, R8: rejeição vale para qualquer status ainda não aprovado. */
     public void rejeitar(String responsavel, String motivo, LocalDateTime quando) {
-        exigirStatus(StatusReembolso.SUBMETIDA, "rejeitar");
+        exigirStatus("rejeitar", StatusReembolso.SUBMETIDA, StatusReembolso.AGUARDANDO_FINANCEIRO);
         this.status = StatusReembolso.REJEITADA;
         registrarDecisao(responsavel, motivo, quando);
     }
 
-    private void exigirStatus(StatusReembolso esperado, String operacao) {
-        if (status != esperado) {
-            throw new TransicaoDeStatusInvalidaException(status, operacao);
+    private void exigirStatus(String operacao, StatusReembolso... permitidos) {
+        for (StatusReembolso permitido : permitidos) {
+            if (status == permitido) {
+                return;
+            }
         }
+        throw new TransicaoDeStatusInvalidaException(status, operacao);
     }
 
     private void registrarDecisao(String responsavel, String motivo, LocalDateTime quando) {
@@ -107,4 +142,6 @@ public class Reembolso {
     public String getDecididoPor() { return decididoPor; }
     public String getMotivoDecisao() { return motivoDecisao; }
     public LocalDateTime getDecididoEm() { return decididoEm; }
+    public String getAprovadorGestor() { return aprovadorGestor; }
+    public String getAprovadorFinanceiro() { return aprovadorFinanceiro; }
 }
