@@ -63,3 +63,11 @@
 - **Arquivos tocados:** `servico/ConcorrenciaAprovacaoTest.java`
 - **Verificação:** `./mvnw -q test -Dtest=ConcorrenciaAprovacaoTest` → 5 repetições verdes. Sem o `@Version` da T002 o teste falha: as duas aprovações "vencem" e o nome gravado é o da última, exatamente o caso do ticket.
 - **Próximo passo concreto:** T008, atualizar a spec 001.
+
+## 2026-10-21 15:00 · T008 · concluída
+
+- **Objetivo da sessão:** manter a spec 001 verdadeira (spec ancorada anda com o código).
+- **O que foi feito:** status da 001 indica que R5 e R6 foram substituídos; nota nos dois requisitos apontando para a 002.
+- **Arquivos tocados:** `specs/001-reembolso-basico/spec.md`
+- **Verificação:** `java scripts/SddCheck.java` → OK; 002 em 8/8.
+- **Próximo passo concreto:** nenhum. Spec 002 encerrada; abrir PR.

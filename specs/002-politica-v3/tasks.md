@@ -35,6 +35,6 @@
 
 ## Fase 4 · Acabamento
 
-- [ ] T008 [INFRA] Atualizar a spec 001: aprovação simples foi substituída pela 002
+- [x] T008 [INFRA] Atualizar a spec 001: aprovação simples foi substituída pela 002
       Arquivos: `specs/001-reembolso-basico/spec.md`
       Verificação: `java scripts/SddCheck.java`

@@ -5,7 +5,7 @@
 > atualizada junto (a spec anda com o código).
 
 - **Origem:** Política de Despesas v2
-- **Status:** aprovada · implementada
+- **Status:** aprovada · implementada · **R5 e R6 substituídos pela spec 002** (aprovação em dois níveis)
 - **Aprovada por:** Marina (PO Finanças) em 02/03/2026
 
 ## Problema
@@ -25,8 +25,8 @@ reembolso em dobro da mesma nota e nenhum registro de quem aprovou.
 - **R2** — SE a data da despesa estiver no futuro, ENTÃO O SISTEMA DEVE recusar o pedido informando o motivo.
 - **R3** — SE a despesa tiver mais de 60 dias corridos, ENTÃO O SISTEMA DEVE recusar o pedido informando o prazo.
 - **R4** — SE já existir pedido do mesmo colaborador com mesmo fornecedor, valor e data, ENTÃO O SISTEMA DEVE recusar o pedido como duplicado.
-- **R5** — QUANDO um responsável aprovar ou rejeitar um pedido SUBMETIDO, O SISTEMA DEVE registrar a decisão, quem decidiu, quando e o motivo (se houver).
-- **R6** — SE alguém tentar decidir um pedido que não está SUBMETIDO, ENTÃO O SISTEMA DEVE recusar a operação sem alterar o pedido.
+- **R5** — QUANDO um responsável aprovar ou rejeitar um pedido SUBMETIDO, O SISTEMA DEVE registrar a decisão, quem decidiu, quando e o motivo (se houver). *(Desde a spec 002: aprovação segue a alçada e exige o papel; ver `specs/002-politica-v3`.)*
+- **R6** — SE alguém tentar decidir um pedido que não está SUBMETIDO, ENTÃO O SISTEMA DEVE recusar a operação sem alterar o pedido. *(Desde a spec 002: rejeição também vale em AGUARDANDO_FINANCEIRO.)*
 - **R7** — QUANDO alguém consultar os pedidos de um colaborador, O SISTEMA DEVE listá-los do mais recente para o mais antigo pela data da despesa.
 
 ## Critérios de aceite
