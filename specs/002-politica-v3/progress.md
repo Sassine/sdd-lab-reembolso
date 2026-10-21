@@ -188,3 +188,14 @@
 - **Commit:** esta entrada integra `T014: proteger decisoes concorrentes e preservar vencedor`.
 - **Bloqueios / dúvidas:** nenhum.
 - **Próximo passo concreto:** T015 — comprovar reserva concorrente de refeições inclusive no primeiro pedido do dia.
+
+## 2026-10-21 19:32 · T015 · concluída
+
+- **Objetivo da sessão:** comprovar teto sob concorrência inclusive em dia vazio e durante liberação de reserva.
+- **O que foi feito:** implementador acrescentou quatro cenários de saldo parcial, primeiro pedido/colisão real da PK e rejeição concorrente com submissão nas duas ordens. Revisão independente APROVADA.
+- **Decisões e porquê:** produção existente passou sem ajustes; sincronização com timeout e observação de lock H2 comprova disputa real, sem sleeps, mutex ou estado compartilhado de EntityManager. Confirmados total, pedidos, âncora única, histórico e duplicidade após commit.
+- **Arquivos tocados:** `src\test\java\com\orbe\reembolso\servico\ReembolsoConcorrenciaTest.java`, checkbox e este log.
+- **Verificação:** 32 testes focados de concorrência/âncora verdes; gate completo verde pelo implementador e pelo orquestrador, diff limpo. Sem RED artificial de produção.
+- **Commit:** esta entrada integra `T015: comprovar reservas concorrentes e liberacao de saldo`.
+- **Bloqueios / dúvidas:** nenhum.
+- **Próximo passo concreto:** T016 — uniformizar erros novos em Problem Details sem restringir v2.
