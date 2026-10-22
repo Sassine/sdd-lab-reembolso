@@ -23,7 +23,7 @@ formatos que as duas ferramentas leem; o que muda é só o atalho de cada uma.
 - No Windows, use `mvnw.cmd` e `.\scripts\verify.ps1`; o resto dos comandos é igual.
 
 ```bash
-git clone <url-deste-repo> sdd-lab && cd sdd-lab
+git clone https://github.com/Sassine/sdd-lab-rembolso.git sdd-lab && cd sdd-lab
 ./mvnw -q test                 # Windows: mvnw.cmd -q test
 java scripts/SddCheck.java     # gate dos artefatos SDD
 ```
