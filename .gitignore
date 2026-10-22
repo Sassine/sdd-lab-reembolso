@@ -6,3 +6,6 @@ target/
 .DS_Store
 .claude/settings.local.json
 .claude/settings.json
+
+# graphify-axet
+.graphify/
